@@ -1,0 +1,67 @@
+/*---------------------------
+Preloader Area CSS Code  
+----------------------------*/
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #fff;
+  }
+  .preloader .loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font: 14px arial;
+}
+
+/* Body */
+body {
+    background-color: grey;
+}
+
+/* content */
+.isi-content {
+    background-color:snow;
+}
+
+.btn-login {
+	border: none;
+	outline: none;
+	height: 40px;
+	font-size: 16px;
+	background: #1ad3d9;
+	color: #fff;
+	border-radius: 20px;
+	cursor: pointer;
+	font-family: raleway;
+	-webkit-transition:all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-login:hover{
+	background: #9be729;
+}
+
+.btn-regist {
+	border: none;
+	outline: none;
+	height: 40px;
+	font-size: 16px;
+	background: #1ad3d9;
+	color: #fff;
+	border-radius: 20px;
+	cursor: pointer;
+	font-family: raleway;
+	-webkit-transition:all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-regist:hover{
+	background: #9be729;
+}

@@ -77,28 +77,28 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active" for="01">
-          <img src="img/carousel/car1.jpg" class="d-block w-100 bannerimg" alt="" id="01" style="width: 101.8%; filter: brightness(50%);">
+          <img src="img/carousel/car1.jpg" class="d-block w-100 bannerimg" alt="" id="01" style=" filter: brightness(50%);">
           <div class="carousel-caption d-none d-md-block ">
             <h5>Proses Pemilahan</h5>
             <p>Proses pemilahan lanjut oleh petugas bank sampah.</p>
           </div>
         </div>
         <div class="carousel-item" for="02">
-          <img src="img/carousel/car2.jpg" class="d-block w-100" alt="..." id="02" style="width: 101.8%; filter: brightness(50%);">
+          <img src="img/carousel/car2.jpg" class="d-block w-100" alt="..." id="02" style=" filter: brightness(50%);">
           <div class="carousel-caption d-none d-md-block ">
             <h5>Proses Penimbangan</h5>
             <p>Proses penimbangan sampah oleh petugas bank sampah.</p>
           </div>
         </div>
         <div class="carousel-item" for="03">
-          <img src="img/carousel/car3.jpg" class="d-block w-100 bannerimg" alt="..." id="03" style="width: 101.8%; filter: brightness(50%);">
+          <img src="img/carousel/car3.jpg" class="d-block w-100 bannerimg" alt="..." id="03" style=" filter: brightness(50%);">
           <div class="carousel-caption d-none d-md-block">
             <h5>Stock Sampah</h5>
             <p>Beberapa stock sampah di bank sampah yang sudah berhasil di timbang dan siap untuk di jual.</p>
           </div>
         </div>
         <div class="carousel-item" for="04">
-          <img src="img/carousel/car4.jpg" class="d-block w-100" alt="..." id="04" style="width: 101.8%; filter: brightness(50%);">
+          <img src="img/carousel/car4.jpg" class="d-block w-100" alt="..." id="04" style=" filter: brightness(50%);">
           <div class="carousel-caption d-none d-md-block">
             <h5>Penumpukan Sampah</h5>
             <p>Penumpukan sampah yang belum dijadikan satu di dalam karung.</p>
@@ -143,34 +143,34 @@
           <div class="row mgt50px">
             <div class="coloumn">
               <div class="imgBox">
-                <img src="img/content/1.jpg">
+                <img src="img/content/1.png">
               </div>
               <div class="details">
-                <h3>#Tahap1<br><span>Lakukan Pendaftaran</span></h3>
+                <h3>Tahap 1<br><span>Lakukan Pendaftaran</span></h3>
               </div>
             </div>
             <div class="coloumn">
               <div class="imgBox">
-                <img src="img/content/2.jpg">
+                <img src="img/content/2.png">
               </div>
               <div class="details">
-                <h3>#Tahap2<br><span>Pemilahan Sampah</span></h3>
+                <h3>Tahap 2<br><span>Pemilahan Sampah</span></h3>
               </div>
             </div>
             <div class="coloumn">
               <div class="imgBox">
-                <img src="img/content/3.jpg">
+                <img src="img/content/3.png">
               </div>
               <div class="details">
-                <h3>#Tahap3<br><span>Penimbangan Sampah</span></h3>
+                <h3>Tahap 3<br><span>Penimbangan Sampah</span></h3>
               </div>
             </div>
             <div class="coloumn">
               <div class="imgBox">
-                <img src="img/content/4.jpg">
+                <img src="img/content/4.png">
               </div>
               <div class="details">
-                <h3>#Tahap4<br><span>Mendapat Keuntungan</span></h3>
+                <h3>Tahap 4<br><span>Mendapat Keuntungan</span></h3>
               </div>
             </div>
             <div style="clear: both;"></div>
@@ -180,19 +180,25 @@
       </div>
     </div>
   </div>
+</div>
+</div>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="asset/internal/js/index.js"></script>
     
     <!--konten maps-->
     <br>
-    <div id="bar">
-      <div class="row mgt50px">
-        <h1 align="center">Lokasi Bank Sampah</h1>
-        <br>
-        <br>
-        <div class="embed-responsive embed-responsive-21by9 mt-3 ms-3">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.1329335630917!2d112.47515226459609!3d-7.450542044625053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e780d7d70685a71%3A0x882bd0b9e0d654de!2sBank%20Sampah%20Mliriprowo!5e0!3m2!1sid!2sid!4v1618905838019!5m2!1sid!2sid" width="98%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+    <div class="container-about">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h3 class="title-un">LOKASI BANK SAMPAH MILIPRONO</h3>
+                  <div class="title-un-icon"><i class="fas fa-map-marked-alt"></i></div>
+                  <p class="title-un-des">
+                  <div class="embed-responsive embed-responsive-21by9 mt-3 ms-3">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.1329335630917!2d112.47515226459609!3d-7.450542044625053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e780d7d70685a71%3A0x882bd0b9e0d654de!2sBank%20Sampah%20Mliriprowo!5e0!3m2!1sid!2sid!4v1618905838019!5m2!1sid!2sid" width="98%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
+               </div>
+            </div>
+          </div>
       </div>
     </div>
 

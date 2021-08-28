@@ -1,6 +1,6 @@
 <?php 
 require 'functions.php';
-$jumlahBeritaPerhalaman = 3;
+$jumlahBeritaPerhalaman = 6;
 $jumlahBerita = count(query("SELECT * FROM berita"));
 $jumlahHalaman = ceil($jumlahBerita / $jumlahBeritaPerhalaman);
 $halamanAktif = ( isset($_GET["halaman"]) ) ? $_GET["halaman"] : 1;
@@ -21,10 +21,13 @@ $postingan = query("SELECT * FROM berita ORDER BY idBerita LIMIT $awalBerita, $j
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="stylesheet" href="css/manual/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style-enfold.css">
     <script src="js/manual/preloader.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <!-- Google Fonts -->
+   <link href='http://fonts.googleapis.com/css?family=Raleway:400,800,500,600,300,700' rel='stylesheet' type='text/css'>
 
     <script>
     $(document).ready(function() {
@@ -46,7 +49,7 @@ $postingan = query("SELECT * FROM berita ORDER BY idBerita LIMIT $awalBerita, $j
   <hr class="bg-danger fw-bold fixed-top" style="height: 13px; margin: top 15px;">
     <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="img/logo/logo.png" alt="" style="width:130px;"></a>
+        <a class="navbar-brand" href="index.php"><img src="img/logo/logo.png" alt="" style="width:130px; height: auto; object-fit: contain;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -77,38 +80,51 @@ $postingan = query("SELECT * FROM berita ORDER BY idBerita LIMIT $awalBerita, $j
     </div>
     </nav>
 
-    <br><br><br><br><br>
-
-    <div class="row mx-5 px-5 text-center">
-    <h1> <b> INFORMASI TERKAIT SAMPAH </b></h1>
-    <hr style="width:75%; height: 5px;" class="mx-auto bg-primary">
-    <!-- Blog Entries Column -->
-        <?php foreach ($postingan as $row) : ?>
-        <div class="card my-4">
-            <img class="card-img-top" style="display: block;margin-left: auto;margin-right: auto;width: 10%;" src="img/berita/<?= $row['gambar'] ?>" alt="<?= $row['judul']; ?>">
-              <div class="card-body">
-                <h2 class="card-title"><?= $row['judul']; ?></h2>
-                <p>
-                      <?php 
-                        $a = $row['isi'];
-                        // echo $a;
-                        if (strlen($a) > 250) {
-                            echo substr($a, 0, 250), " (...)";
-                        } else {
-                            echo $a;
-                        }
-                    ?>
-                </p>
-                <a href="<?= $row['sumber']; ?>/" target="_blank" class="btn btn-primary">Read More &rarr;</a>
-              </div>
-        </div>
-        <?php endforeach; ?>
-
+    <!-- Blog Section -->
+      <div class="container-about">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h3 class="title-un" style="margin-top: 90px;">BERITA DAN INFORMASI TENTANG SAMPAH</h3>
+                  <div class="title-un-icon"><i class="fas fa-newspaper"></i></div>
+                  <p class="title-un-des">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, </p>
+                  <ul class="blog-posts-g">
+                    <?php foreach ($postingan as $row) : ?>
+                     <li>
+                        <div class="post-img">
+                           <a href="<?= $row['sumber']; ?>/"target="_blank" >
+                              <img style="max-width: 100%; max-height: 50%;" src="img/berita/<?= $row['gambar'] ?>" alt="<?= $row['judul']; ?>">
+                           </a>
+                        </div>
+                        <div class="post-content">
+                           <h5> <a href="<?= $row['sumber']; ?>/" target="_blank"><?= $row['judul']; ?></a></h5>
+                           <!-- <div class="post-info"><span> 4 October 2015</span>/<span><a href="#"> By John Deo</a></span></div> -->
+                           <p>
+                              <?php 
+                                $a = $row['isi'];
+                                // echo $a;
+                                if (strlen($a) > 250) {
+                                    echo substr($a, 0, 250), " (...)";
+                                } else {
+                                    echo $a;
+                                }
+                              ?>
+                           </p>
+                        </div>  
+                     </li>
+                     <?php endforeach; ?>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
         <!-- bagian pagination -->
-        <div class="pagination" style="margin-left: 45%;">
+        <div class="align-center pagination" style="margin-left: 40%;">
             <?php if($halamanAktif != 1){ 
                 $a = $halamanAktif -1;
-                echo "<a class='page-link' href='?halaman=$a'>Previous</a>";
+                echo "<a class='button' href='?halaman=$a'>Previous</a>";
+            }elseif($halamanAktif = 1){
+              echo "<a class='button' href='?halaman=1'>Previous</a>";
             } ?>
             
             <?php for( $i = 1; $i <= $jumlahHalaman; $i++ ) : 
@@ -116,15 +132,17 @@ $postingan = query("SELECT * FROM berita ORDER BY idBerita LIMIT $awalBerita, $j
                 ?>
 
                 <?php if($halamanAktif != $i) : ?>
-                    <a class="page-link" href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+                    <a class="button" href="?halaman=<?= $i; ?>"><?= $i; ?></a>
                 <?php else : ?>
-
-                    <a class="page-link bg-primary text-white" href="?halaman=<?= $i; ?>" ><?= $i; ?></a>
+                    <a class="button" style="background-color: #8a8f6a; color: white;" href="?halaman=<?= $i; ?>" ><?= $i; ?></a>
                 <?php endif; ?>
             <?php endfor; ?>
             <?php if($halamanAktif < $jumlahHalaman){ 
                 $a = $halamanAktif +1;
-                echo "<a class='page-link' href='?halaman=$a'>Next</a>";
+                echo "<a class='button' href='?halaman=$a'>Next</a>";
+            }elseif ($halamanAktif = $jumlahHalaman) {
+              $a = $jumlahHalaman;
+              echo "<a class='button' href='?halaman=$a'>Next</a>";
             } ?>
         </div>
       

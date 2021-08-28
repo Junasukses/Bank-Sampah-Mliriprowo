@@ -34,13 +34,13 @@ Preloader Area CSS Code
   transition: 0.5s;
 }
 
-
 /* ---carousel--- */
-.carousel-item {
-    height: 500px;
+.carousel-item img{
+    height: 520px;
     margin-top: 90px; 
     text-transform: uppercase;
     font-family: 'Raleway', sans-serif;
+    min-height: 20%;
 }
 .carousel-item h5{
   font-weight: bold;
@@ -116,11 +116,18 @@ position: relative;
 
 .row .coloumn .imgBox img{
 width: 100%;
-transition: 5s;
+-webkit-transition: all .5s;
+-moz-transition: all .5s;
+-o-transition: all .5s;
+transition: all .5s;
 }
 
 .row .coloumn:hover .imgBox img{
-transform: scale(1.5);
+-ms-transform: scale(1.2);
+-moz-transform: scale(1.2);
+-webkit-transform: scale(1.2);
+-o-transform: scale(1.2);
+transform: scale(1.2);
 }
 
 .row .coloumn .details{

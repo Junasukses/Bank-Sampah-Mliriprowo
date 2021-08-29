@@ -78,7 +78,7 @@ $setoran = query("SELECT * FROM setoran ORDER BY idSetor ASC");
                <div class="col-md-12">
                   <h3 class="title-un" style="margin-top: 90px;">JADWAL HARIAN SETORAN SAMPAH</h3>
                   <div class="title-un-icon"><i class="fas fa-calendar-alt"></i></div>
-                  <p class="title-un-des">Berikut merupakan jenis sampah yang dapat disetorkan berdasarkan harinya, jadwal penyetoran dapat dilakukan pada hari senin - sabtu (hari minggu libur).<div class="blockquote-footer text-center" style="margin-top: -45px; font-weight: bold;">Catatan: Diharapkan menyetorkan jenis sampah sesuai dengan hari yang telah ditentukan.</div></p>
+                  <p class="title-un-des">Berikut merupakan jenis sampah yang dapat disetorkan berdasarkan harinya, jadwal penyetoran dapat dilakukan pada hari senin - sabtu (hari minggu libur).<!-- <div class="blockquote-footer text-center" style="margin-top: -45px; font-weight: bold;">Catatan: Diharapkan menyetorkan jenis sampah sesuai dengan hari yang telah ditentukan.</div> --></p>
                   <!-- start css -->
                   <div id="generic_price_table">   
                       <section>
@@ -89,7 +89,7 @@ $setoran = query("SELECT * FROM setoran ORDER BY idSetor ASC");
                               <div class="generic_content active clearfix">
                                   <div class="generic_head_price clearfix">
                                       <div class="generic_head_content clearfix">
-                                        <div class="head_bg warna-1"></div>
+                                        <div class="head_bg"></div>
                                         <div class="head">
                                             <span>SENIN</span>
                                         </div>
@@ -222,129 +222,61 @@ $setoran = query("SELECT * FROM setoran ORDER BY idSetor ASC");
                   <h3 class="title-un">RINCIAN SETORAN SAMPAH</h3>
                   <div class="title-un-icon"><i class="fas fa-book"></i></div>
                   <p class="title-un-des" style="text-align: center;">Berikut adalah rincian dari setoran penggona</p>
-                  <div class="card">
-          <div class="card-body">
-        
-          <table id="example" class="display" cellspacing="0" width="100%" border="0" >
-            <thead>
-            <tr>
-                <th>No</th>
-                <th>Tanggal Setoran</th>
-                <th>Nama Penyetor</th>
-                <th>Nama Sampah</th>
-                <th>Berat</th>
-                <th>Harga/KG</th>
-                <th>Total</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php $i = 1; ?>
-            <?php foreach ( $setoran as $row)  : ?>
-            <?php $kode = $row["idUser"] ?>
-            <?php $namaUser = query("SELECT namaUser FROM users WHERE idUser = '$kode' "); ?>
-            <?php $kode2 = $row["idSampah"] ?>
-            <?php $namaSampah = query("SELECT namaSampah,harga FROM sampah WHERE idSampah = '$kode2' "); ?>
-            <tr align="center">
-                <td><?php echo $i; ?></td>
-                <td><?php echo $row['tglSetor'] ?></td>
-                <?php foreach ( $namaUser as $user)  : ?>
-                <td><?php echo $user['namaUser']; ?></td>
-                <?php endforeach; ?>
-                <?php foreach ( $namaSampah as $sampah)  : ?>
-                <td><?php echo $sampah['namaSampah']; ?></td>
-                
-                <td><?php echo $row['berat']." KG" ?></td>
-                <td><?php echo "Rp. ".number_format($sampah['harga'], 2, ",", ".") ?></td>
-                <td><?php echo "Rp. ".number_format(($row['total']), 2, ",", ".") ?></td>
-                <?php endforeach; ?>
-            </tr>
-            <?php $i++; ?>
-            <?php endforeach; ?>
-            </tbody>
-          </table>
-          <br>
-          <br>
-          
-          <script type="text/javascript" src="css/datatables/js/jquery.min.js"></script>
-          <script type="text/javascript" src="css/datatables/js/jquery.dataTables.min.js"></script>
-          <script>
-              $(document).ready(function() {
-                $('#example').DataTable();
-              } );
-          </script>
-          </div>
-        </div>
+                    <table id="example" class="display" cellspacing="0" width="100%" border="0" >
+                      <thead>
+                      <tr>
+                          <th>No</th>
+                          <th>Tanggal Setoran</th>
+                          <th>Nama Penyetor</th>
+                          <th>Nama Sampah</th>
+                          <th>Berat</th>
+                          <th>Harga/KG</th>
+                          <th>Total</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <?php $i = 1; ?>
+                      <?php foreach ( $setoran as $row)  : ?>
+                      <?php $kode = $row["idUser"] ?>
+                      <?php $namaUser = query("SELECT namaUser FROM users WHERE idUser = '$kode' "); ?>
+                      <?php $kode2 = $row["idSampah"] ?>
+                      <?php $namaSampah = query("SELECT namaSampah,harga FROM sampah WHERE idSampah = '$kode2' "); ?>
+                      <tr align="center">
+                          <td><?php echo $i; ?></td>
+                          <td><?php echo $row['tglSetor'] ?></td>
+                          <?php foreach ( $namaUser as $user)  : ?>
+                          <td><?php echo $user['namaUser']; ?></td>
+                          <?php endforeach; ?>
+                          <?php foreach ( $namaSampah as $sampah)  : ?>
+                          <td><?php echo $sampah['namaSampah']; ?></td>
+                          
+                          <td><?php echo $row['berat']." KG" ?></td>
+                          <td><?php echo "Rp. ".number_format($sampah['harga'], 2, ",", ".") ?></td>
+                          <td><?php echo "Rp. ".number_format(($row['total']), 2, ",", ".") ?></td>
+                          <?php endforeach; ?>
+                      </tr>
+                      <?php $i++; ?>
+                      <?php endforeach; ?>
+                      </tbody>
+                    </table>
+                    <br>
+                    <br>
+                    
+                    <script type="text/javascript" src="css/datatables/js/jquery.min.js"></script>
+                    <script type="text/javascript" src="css/datatables/js/jquery.dataTables.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+                          $('#example').DataTable();
+                        } );
+                    </script>
+                    </div>
+                  </div>
                </div>
             </div>
           </div>
       </div>
-      <br>
-      <div class="row text-center">
-      <h1> <b> RINCIAN SETORAN SAMPAH </b></h1>
-      <hr style="width:75%; height: 5px;" class="mx-auto bg-danger">
-      </div>
-
-      <div class="box-1 text-center">
-        <h2 style="font-size: 30px; color: #262626;">Daftar Setoran Pengguna</h2>
-        <div class="card">
-          <div class="card-body">
-        
-          <table id="example" class="display" cellspacing="0" width="100%" border="0" >
-            <thead>
-            <tr>
-                <th>No</th>
-                <th>Tanggal Setoran</th>
-                <th>Nama Penyetor</th>
-                <th>Nama Sampah</th>
-                <th>Berat</th>
-                <th>Harga/KG</th>
-                <th>Total</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php $i = 1; ?>
-					  <?php foreach ( $setoran as $row)  : ?>
-            <?php $kode = $row["idUser"] ?>
-            <?php $namaUser = query("SELECT namaUser FROM users WHERE idUser = '$kode' "); ?>
-            <?php $kode2 = $row["idSampah"] ?>
-            <?php $namaSampah = query("SELECT namaSampah,harga FROM sampah WHERE idSampah = '$kode2' "); ?>
-            <tr align="center">
-                <td><?php echo $i; ?></td>
-                <td><?php echo $row['tglSetor'] ?></td>
-                <?php foreach ( $namaUser as $user)  : ?>
-                <td><?php echo $user['namaUser']; ?></td>
-                <?php endforeach; ?>
-                <?php foreach ( $namaSampah as $sampah)  : ?>
-                <td><?php echo $sampah['namaSampah']; ?></td>
-                
-                <td><?php echo $row['berat']." KG" ?></td>
-                <td><?php echo "Rp. ".number_format($sampah['harga'], 2, ",", ".") ?></td>
-                <td><?php echo "Rp. ".number_format(($row['total']), 2, ",", ".") ?></td>
-                <?php endforeach; ?>
-            </tr>
-            <?php $i++; ?>
-					  <?php endforeach; ?>
-            </tbody>
-          </table>
-          <br>
-          <br>
-          
-          <script type="text/javascript" src="css/datatables/js/jquery.min.js"></script>
-          <script type="text/javascript" src="css/datatables/js/jquery.dataTables.min.js"></script>
-          <script>
-              $(document).ready(function() {
-                $('#example').DataTable();
-              } );
-          </script>
-          </div>
-        </div>
-		  </div>
-
-    </div>
-    <br>
 
     <!--footer-->
-    <br>
     <footer class="footer-distributed">
 
       <div class="footer-left">

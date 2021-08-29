@@ -53,7 +53,20 @@ Preloader Area CSS Code
 .mgt50px{
     margin-top: 50px;
   }
-
+.display{
+  border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+  border: 1px black solid;
+  color: white;
+}
+.display td{
+  color: black;
+}
+.display th{
+  background-color: #398B93;
+  text-align: center;
+}
 /*pembeda */
 .works-section{
   padding:3em 0;

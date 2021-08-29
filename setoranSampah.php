@@ -14,6 +14,8 @@ $setoran = query("SELECT * FROM setoran ORDER BY idSetor ASC");
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style-enfold.css">
+    <link rel="stylesheet" type="text/css" href="css/style-schedule.css">
     <link rel="stylesheet" href="css/manual/style.css">
     <link rel="stylesheet" type="text/css" href="css/datatables/CSS/jquery.dataTables.css">
     <script src="js/manual/preloader.js" type="text/javascript"></script>
@@ -39,7 +41,7 @@ $setoran = query("SELECT * FROM setoran ORDER BY idSetor ASC");
   <hr class="bg-danger fw-bold fixed-top" style="height: 13px; margin: top 15px;">
     <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="img/logo/logo.png" alt="" style="width:130px;"></a>
+        <a class="navbar-brand" href="index.php"><img src="img/logo/logo.png" alt="" style="width:130px; height: auto; object-fit: contain;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -69,106 +71,213 @@ $setoran = query("SELECT * FROM setoran ORDER BY idSetor ASC");
         </div>
     </div>
     </nav>
-
-    <br><br><br><br>
     <!--konten2-->
-
-    <div class="container">
-      <div class="row text-center">
-        <h1> <b> JADWAL HARIAN SETORAN SAMPAH </b></h1>
-        <hr style="width:75%; height: 5px;" class="mx-auto bg-success">
-        <p>Berikut merupakan jenis sampah yang dapat disetorkan berdasarkan harinya, jadwal penyetoran dapat dilakukan pada hari senin - sabtu (hari minggu libur). <br><b>Catatan: Diharapkan menyetorkan jenis sampah sesuai dengan hari yang telah ditentukan.</b></p> 
-      </div>
-      
-      <div class="row mt-4">
-        <div class="card me-5 ms-5" style="width: 22rem;">
-            <div class="card-header bg-danger display-4 pt-2 pb-1 text-white text-center">
-                <h2>SENIN</h2>
-            </div>
-            <div class="card-body text-left">
-              <ul style="line-height:180%">
-                <li> <b>Sampah Hasil Masak</b></li>
-                <li> <b>Dedaunan</b></li>
-                <li> <b>Kresek</b></li>
-                <li> <b>Plastik</b></li>
-              </ul>
+    <div class="container-about">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h3 class="title-un" style="margin-top: 90px;">JADWAL HARIAN SETORAN SAMPAH</h3>
+                  <div class="title-un-icon"><i class="fas fa-calendar-alt"></i></div>
+                  <p class="title-un-des">Berikut merupakan jenis sampah yang dapat disetorkan berdasarkan harinya, jadwal penyetoran dapat dilakukan pada hari senin - sabtu (hari minggu libur).<div class="blockquote-footer text-center" style="margin-top: -45px; font-weight: bold;">Catatan: Diharapkan menyetorkan jenis sampah sesuai dengan hari yang telah ditentukan.</div></p>
+                  <!-- start css -->
+                  <div id="generic_price_table">   
+                      <section>
+                        <div class="container">
+                          <div class="row">
+                            <!-- start tabel -->
+                            <div class="col-md-4">
+                              <div class="generic_content active clearfix">
+                                  <div class="generic_head_price clearfix">
+                                      <div class="generic_head_content clearfix">
+                                        <div class="head_bg warna-1"></div>
+                                        <div class="head">
+                                            <span>SENIN</span>
+                                        </div>
+                                      </div>
+                                  </div>                            
+                                  <div class="generic_feature_list">
+                                      <ul>
+                                          <li><span>Sampah Hasil Masak</span></li>
+                                          <li><span>Dedaunan</span></li>
+                                          <li><span>Kresek</span></li>
+                                          <li><span>Plastik</span></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="generic_content active clearfix">
+                                  <div class="generic_head_price clearfix">
+                                      <div class="generic_head_content clearfix">
+                                        <div class="head_bg"></div>
+                                        <div class="head">
+                                            <span>SELASA</span>
+                                        </div>
+                                      </div>
+                                  </div>                            
+                                  <div class="generic_feature_list">
+                                      <ul>
+                                          <li><span>Sampah Hasil Masak</span></li>
+                                          <li><span>Botol Mineral Plastik</span></li>
+                                          <li><span>Botol Mineral Kaca</span></li>
+                                          <li><span>Sepatu/Sandal</span></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="generic_content active clearfix">
+                                  <div class="generic_head_price clearfix">
+                                      <div class="generic_head_content clearfix">
+                                        <div class="head_bg"></div>
+                                        <div class="head">
+                                            <span>RABU</span>
+                                        </div>
+                                      </div>
+                                  </div>                            
+                                  <div class="generic_feature_list">
+                                      <ul>
+                                          <li><span>Sampah Hasil Masak</span></li>
+                                          <li><span>Dedaunan</span></li>
+                                          <li><span>Gelas Mineral Plastik</span></li>
+                                          <li><span>Karah Warna</span></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                            </div>
+                          <div class="col-md-4">
+                              <div class="generic_content jarak active clearfix">
+                                  <div class="generic_head_price clearfix">
+                                      <div class="generic_head_content clearfix">
+                                        <div class="head_bg"></div>
+                                        <div class="head">
+                                            <span>KAMIS</span>
+                                        </div>
+                                      </div>
+                                  </div>                            
+                                  <div class="generic_feature_list">
+                                      <ul>
+                                          <li><span>Sampah Hasil Masak</span></li>
+                                          <li><span>Keleng</span></li>
+                                          <li><span>Kardus/Karton</span></li>
+                                          <li><span>Kain</span></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="generic_content jarak active clearfix">
+                                  <div class="generic_head_price clearfix">
+                                      <div class="generic_head_content clearfix">
+                                        <div class="head_bg"></div>
+                                        <div class="head">
+                                            <span>JUMAT</span>
+                                        </div>
+                                      </div>
+                                  </div>                            
+                                  <div class="generic_feature_list">
+                                      <ul>
+                                          <li><span>Sampah Hasil Masak</span></li>
+                                          <li><span>Dedaunan</span></li>
+                                          <li><span>Besi</span></li>
+                                          <li><span>Baja</span></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="generic_content jarak active clearfix">
+                                  <div class="generic_head_price clearfix">
+                                      <div class="generic_head_content clearfix">
+                                        <div class="head_bg"></div>
+                                        <div class="head">
+                                            <span>SABTU</span>
+                                        </div>
+                                      </div>
+                                  </div>                            
+                                  <div class="generic_feature_list">
+                                      <ul>
+                                          <li><span>Sampah Hasil Masak</span></li>
+                                          <li><span>Zeng</span></li>
+                                          <li><span>Aluminium</span></li>
+                                          <li><span>Tembaga</span></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                            </div>
+                            <!-- end tabel  -->
+                          </div>  
+                        </div>
+                      </section>             
+                  </div>
+                  <!-- end css table -->
+                </div>
             </div>
           </div>
-
-        <div class="card me-5 ms-5" style="width: 22rem;">
-            <div class="card-header bg-warning display-4 pt-2 pb-1 text-white text-center">
-                <h2>SELASA</h2>
-            </div>
-            <div class="card-body">
-              <ul style="line-height:180%">
-                <li> <b>Sampah Hasil Masak</b></li>
-                <li> <b>Botol Mineral Plastik</b></li>
-                <li> <b>Botol Mineral Kaca</b></li>
-                <li> <b>Sepatu/Sandal</b></li>
-              </ul>
-            </div>
+    </div>
+    <div class="container-newsletter">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h3 class="title-un">RINCIAN SETORAN SAMPAH</h3>
+                  <div class="title-un-icon"><i class="fas fa-book"></i></div>
+                  <p class="title-un-des" style="text-align: center;">Berikut adalah rincian dari setoran penggona</p>
+                  <div class="card">
+          <div class="card-body">
+        
+          <table id="example" class="display" cellspacing="0" width="100%" border="0" >
+            <thead>
+            <tr>
+                <th>No</th>
+                <th>Tanggal Setoran</th>
+                <th>Nama Penyetor</th>
+                <th>Nama Sampah</th>
+                <th>Berat</th>
+                <th>Harga/KG</th>
+                <th>Total</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php $i = 1; ?>
+            <?php foreach ( $setoran as $row)  : ?>
+            <?php $kode = $row["idUser"] ?>
+            <?php $namaUser = query("SELECT namaUser FROM users WHERE idUser = '$kode' "); ?>
+            <?php $kode2 = $row["idSampah"] ?>
+            <?php $namaSampah = query("SELECT namaSampah,harga FROM sampah WHERE idSampah = '$kode2' "); ?>
+            <tr align="center">
+                <td><?php echo $i; ?></td>
+                <td><?php echo $row['tglSetor'] ?></td>
+                <?php foreach ( $namaUser as $user)  : ?>
+                <td><?php echo $user['namaUser']; ?></td>
+                <?php endforeach; ?>
+                <?php foreach ( $namaSampah as $sampah)  : ?>
+                <td><?php echo $sampah['namaSampah']; ?></td>
+                
+                <td><?php echo $row['berat']." KG" ?></td>
+                <td><?php echo "Rp. ".number_format($sampah['harga'], 2, ",", ".") ?></td>
+                <td><?php echo "Rp. ".number_format(($row['total']), 2, ",", ".") ?></td>
+                <?php endforeach; ?>
+            </tr>
+            <?php $i++; ?>
+            <?php endforeach; ?>
+            </tbody>
+          </table>
+          <br>
+          <br>
+          
+          <script type="text/javascript" src="css/datatables/js/jquery.min.js"></script>
+          <script type="text/javascript" src="css/datatables/js/jquery.dataTables.min.js"></script>
+          <script>
+              $(document).ready(function() {
+                $('#example').DataTable();
+              } );
+          </script>
+          </div>
         </div>
-
-        <div class="card me-7 ms-5 " style="width: 22rem;">
-            <div class="card-header bg-success display-4 pt-2 pb-1 text-white text-center">
-                <h2>RABU</h2>
-            </div>
-            <div class="card-body">
-              <ul style="line-height:180%">
-                <li> <b>Sampah Hasil Masak</b></li>
-                <li> <b>Dedaunan</b></li>
-                <li> <b>Gelas Mineral Plastik</b></li>
-                <li> <b>Karah Warna</b></li>
-              </ul>
-            </div>
-        </div>
-      </div>
-
-      <div class="row mt-4">
-        <div class="card me-5 ms-5" style="width: 22rem;">
-            <div class="card-header bg-secondary display-4 pt-2 pb-1 text-white text-center">
-                <h2>KAMIS</h2>
-            </div>
-            <div class="card-body">
-              <ul style="line-height:180%">
-                <li> <b>Sampah Hasil Masak</b></li>
-                <li> <b>Keleng</b></li>
-                <li> <b>Kardus/Karton</b></li>
-                <li> <b>Kain</b></li>
-              </ul>
+               </div>
             </div>
           </div>
-
-        <div class="card me-5 ms-5 " style="width: 22rem;">
-            <div class="card-header bg-info display-4 pt-2 pb-1 text-white text-center">
-                <h2>JUM'AT</h2>
-            </div>
-            <div class="card-body">
-              <ul style="line-height:180%">
-                <li> <b>Sampah Hasil Masak</b></li>
-                <li> <b>Dedaunan</b></li>
-                <li> <b>Besi</b></li>
-                <li> <b>Baja</b></li>
-              </ul>
-            </div>
-        </div>
-
-        <div class="card me-7 ms-5 " style="width: 22rem;">
-            <div class="card-header bg-primary display-4 pt-2 pb-1 text-white text-center">
-                <h2>SABTU</h2>
-            </div>
-            <div class="card-body">
-              <ul style="line-height:180%">
-                <li> <b>Sampah Hasil Masak</b></li>
-                <li> <b>Zeng</b></li>
-                <li> <b>Aluminium</b></li>
-                <li> <b>Tembaga</b></li>
-                <li> <b>Lampu</b></li>
-              </ul>
-            </div>
-        </div>
       </div>
-
       <br>
       <div class="row text-center">
       <h1> <b> RINCIAN SETORAN SAMPAH </b></h1>

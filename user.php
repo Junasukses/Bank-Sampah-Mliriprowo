@@ -26,6 +26,8 @@ $biodata = query("SELECT * FROM users WHERE idUser = '$id'")[0];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/manual/styledatauser.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/manual/style.css">
     <script src="js/manual/preloader.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -45,7 +47,46 @@ $biodata = query("SELECT * FROM users WHERE idUser = '$id'")[0];
         </div>
     </div>
 
-    <div class="sidebar">
+    <!--wrapper start-->
+        <div class="wrapper">
+            <!--sidebar start-->
+            <div class="sidebar">
+                <div class="sidebar-menu">
+                    <center class="profile">
+                        <img src="img/logo/user.png" alt="">
+                        <p><?php echo $biodata["namaUser"]; ?></p>
+                    </center>
+                    <li class="item">
+                        <a href="user.php" target="isi" class="menu-btn">
+                            <i class="fa fa-user"></i><span>Data User</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="hasilUser.php" target="isi" class="menu-btn">
+                            <i class="fas fa-comments-dollar"></i><span>Hasil Pengumpulan</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="setoranUser.php" target="isi" class="menu-btn">
+                            <i class="fas fa-comments-dollar"></i><span>Transaksi Penarikan</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="pengumpulanUser.php" target="isi" class="menu-btn">
+                            <i class="fas fa-chart-bar"></i><span>Grafik Pengumpulan</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="logout.php" target="isi" class="menu-btn">
+                            <i class="fas fa-sign-out-alt"></i><span>Logout</span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+            <!--sidebar end-->
+        </div>
+
+<!--     <div class="sidebar">
 			<ul>
 				<li>
 					<a href="" style="text-align: center; padding: 30px 0 30px 0; font-size: 20px;">Welcome, <br><?php echo $biodata["namaUser"]; ?> </a>
@@ -76,7 +117,8 @@ $biodata = query("SELECT * FROM users WHERE idUser = '$id'")[0];
         <p class="text-center text-warning">Bank Sampah Mliriprowo</p>
 
 			</ul>
-		</div>
+		</div> -->
+
       <div class="box-1 text-center">
         <h2 style="font-size: 30px; color: #262626;">Data Nasabah</h2>
         <div class="card">

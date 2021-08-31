@@ -28,6 +28,8 @@ $setoran = query("SELECT * FROM setoran WHERE idUser = '$id' ORDER BY tglSetor A
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/manual/styleuser.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/manual/style.css">
     <link rel="stylesheet" type="text/css" href="css/datatables/CSS/jquery.dataTables.css">
     <script src="js/manual/preloader.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -48,38 +50,44 @@ $setoran = query("SELECT * FROM setoran WHERE idUser = '$id' ORDER BY tglSetor A
         </div>
     </div>
 
-    <div class="sidebar">
-			<ul>
-        <li>
-					<a href="" style="text-align: center; padding: 30px 0 30px 0; font-size: 20px;">Welcome, <br><?php echo $biodata["namaUser"]; ?> </a>
-				</li>
-
-				<li>
-					<a href="user.php"><span class="fa fa-user" aria-hidden="true"></span>Data User</a>
-				</li>	
-				 	
-				<li>
-					<a href="hasilUser.php"><span class="fas fa-trash-restore-alt" aria-hidden="true"></span>Hasil Pengumpulan</a>
-				</li>
-				
-				<li>
-					<a href="setoranUser.php"><span class="fas fa-comments-dollar" aria-hidden="true"></span>Transaksi Penarikan</a>
-				</li>
-
-				<li>
-					<a href="pengumpulanUser.php"><span class="fas fa-chart-bar" aria-hidden="true"></span>Grafik Pengumpulan</a>
-				</li>
-
-				<li>
-					<a href="logout.php"><span class="fas fa-sign-out-alt" aria-hidden="true"></span>Logout</a>
-				</li>
-
-        <br><br><br><br><br><br>
-        <img src="img/logo/logo.png" style="width:75%" class="ms-4" alt="">
-        <p class="text-center text-warning">Bank Sampah Mliriprowo</p>
-
-			</ul>
-		</div>
+    <!--wrapper start-->
+        <div class="wrapper">
+            <!--sidebar start-->
+            <div class="sidebar">
+                <div class="sidebar-menu">
+                    <center class="profile">
+                        <img src="img/logo/user.png" alt="">
+                        <p><?php echo $biodata["namaUser"]; ?></p>
+                    </center>
+                    <li class="item">
+                        <a href="user.php" target="isi" class="menu-btn">
+                            <i class="fa fa-user"></i><span>Data User</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="hasilUser.php" target="isi" class="menu-btn">
+                            <i class="fas fa-comments-dollar"></i><span>Hasil Pengumpulan</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="setoranUser.php" target="isi" class="menu-btn">
+                            <i class="fas fa-comments-dollar"></i><span>Transaksi Penarikan</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="pengumpulanUser.php" target="isi" class="menu-btn">
+                            <i class="fas fa-chart-bar"></i><span>Grafik Pengumpulan</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="logout.php" target="isi" class="menu-btn">
+                            <i class="fas fa-sign-out-alt"></i><span>Logout</span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+            <!--sidebar end-->
+        </div>
 
     <div class="box-1 text-center">
       <h2 style="font-size: 30px; color: #262626;">Data Pengumpulan Anda</h2>

@@ -69,8 +69,8 @@ $postingan = query("SELECT * FROM berita ORDER BY idBerita LIMIT $awalBerita, $j
               <i class="fas fa-user-circle"></i> Account
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item text-white" href="registrasi.php" target="_blank"><i class="fas fa-registered"></i> Registration</a></li>
-                <li><a class="dropdown-item text-white" href="login.php" target="_blank"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                <li><a class="dropdown-item text-white" href="registrasi.php"><i class="fas fa-registered"></i> Registration</a></li>
+                <li><a class="dropdown-item text-white" href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
               </ul>
             </li>
                 <!-- <a class="nav-link active text-white" aria-current="page" href="#">Beranda</a> -->

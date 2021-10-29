@@ -25,6 +25,7 @@ $berita = query("SELECT * FROM berita ORDER BY idBerita ASC");
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/manual/styleuser.css">
@@ -105,7 +106,6 @@ $berita = query("SELECT * FROM berita ORDER BY idBerita ASC");
         </div>
     <div class="box-1 text-center">
         <h2 style="font-size: 30px; color: #262626;">Daftar Berita</h2>
-        <div class="card">
           <div class="card-body">
         
           <table id="example" class="display" cellspacing="0" width="100%" border="0" >
@@ -117,13 +117,13 @@ $berita = query("SELECT * FROM berita ORDER BY idBerita ASC");
                 <th>Isi</th>
                 <th>Gambar</th>
                 <th>Sumber</th>
-                <th>Aksi</th>
+                <th colspan="2">Aksi</th>
             </tr>
             </thead>
             <tbody>
             <?php $i = 1; ?>
 					  <?php foreach ( $berita as $row)  : ?>
-            <tr align="center">
+            <tr align="center" class="shadow-tr">
                 <td><?php echo $i; ?></td>
                 <td><?php echo $row['idBerita'] ?></td>
                 <td>
@@ -162,11 +162,12 @@ $berita = query("SELECT * FROM berita ORDER BY idBerita ASC");
                 </td>
                 <td>
                     <a href="editBerita.php?idBerita=<?php echo $row["idBerita"]; ?>">
-                    <button class="btn_edit"><i class="fa fa-pencil"></i>Edit</button> 
+                    <img src="img/aset/logoEdit.png" width="20">
                     </a>
-                    
+                </td>
+                <td>
                     <a onclick="return confirm('Anda yakin ingin menghapus data ini?')" href="hapus.php?action=delete&id=<?php echo $row["idBerita"]; ?>">
-                    <button class="btn_hapus"><i class="fa fa-trash-o"></i>Hapus</button>
+                    <img src="img/aset/logoTrash.png" width="20">
                     </a>
                 </td>
             </tr>

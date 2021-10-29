@@ -1,0 +1,21 @@
+/*
+ * WP Quiz Pro Plugin by MyThemeShop
+ * https://mythemeshop.com/plugins/wp-quiz-pro/
+*/
+.wq_quizCtr .wq_questionTextCtr { color: #5f5f5f; background: #ecf0f1; border-radius: 3px 3px 0 0; width: 100%; }
+.wq_quizCtr .wq_singleAnswerCtr { color: #5f5f5f; background: #ecf0f1; border: 3px solid transparent; padding: 5px 7px; margin: 0 0 15px 0; border-radius: 3px; line-height: 30px; }
+.wq_quizCtr .wq_singleAnswerCtr:last-child { margin-bottom: 0; }
+.wq_singleAnswerCtr:hover, .wq_singleAnswerCtr.chosen,.wq_quizCtr .wq_singleAnswerCtr.wq_answerSelected { background: #FFF38B!important; color: #444!important; border: 3px solid #F7E971 !important; transition: background 550ms ease-out; cursor: pointer; }
+.wq_quizCtr .wq_singleAnswerCtr.wq_correctAnswer { background: #8BC34A!important; border-color: #7BAD40!important; color: #fff!important; opacity: 0.5; }
+.wq_quizCtr .wq_singleAnswerCtr.wq_incorrectAnswer { background: #FF5722!important; border-color: #D4471B!important; color: #fff!important; opacity: 0.8; }
+.wq_questionAnswered .wq_singleAnswerCtr { opacity: 0.5; }
+.wq_questionAnswered .wq_singleAnswerCtr.chosen { opacity: 1; }
+.wq_singleAnswerCtr .wq_answerTxtCtr { background-image: url(../image/flat-checkbox-no.jpg); background-repeat: no-repeat; vertical-align: middle; display: inline-block; line-height: 19px; font-size: 18px; font-weight: bold; height: auto; padding-left: 31px; cursor: pointer; word-break: break-word; }
+.wq_quizCtr .wq_singleResultWrapper { background: #ecf0f1; border-color: #ecf0f1; border-radius: 3px; }
+.chosen .wq_answerTxtCtr, .wq_answerSelected .wq_answerTxtCtr { background-image: url(../image/flat-checkbox-ok.png); }
+.wq_correctExplanationHead { color: #8BC34A; font-weight: bold; font-size: 1.2em; }
+.wq_wrongExplanationHead { color: #FF5722; font-weight: bold; font-size: 1.2em; }
+.wq_quizForceActionCtr { background: #ecf0f1; padding: 30px 20px; text-align: center; float: left; width: 100%; box-sizing: border-box; margin-top: 30px; border-radius: 3px; }
+.wq_singleResultWrapper .wq_shareCtr button, .wq_quizForceShareCtr button, .wq_questionLogin button, .wq_retakeQuizBtn, .wq_quizEmailCtr form button, .wq_triviaQuestionExplanation { border-radius: 3px; }
+.wq_quizEmailCtr form input { border: 2px solid #d7dee0; border-radius: 4px; }
+.wq_triviaQuestionExplanation { border-color: #d7dee0; padding: 12px; padding-bottom: 2px; }

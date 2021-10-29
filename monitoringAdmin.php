@@ -115,7 +115,7 @@ $stock = mysqli_query($conn, "SELECT stock FROM stock_sampah order by idStock as
     <div class="box-1 text-center">
         <h2 style="font-size: 30px; color: #262626;">Jumlah Stock Sampah</h2>
         <div class="container">
-            <canvas id="myChart" width="100" height="100"></canvas>
+            <canvas id="myChart" width="100%" height="50%"></canvas>
         </div>
 
         <script>
@@ -128,53 +128,35 @@ $stock = mysqli_query($conn, "SELECT stock FROM stock_sampah order by idStock as
                             label: 'Jumlah Stock',
                             data: [<?php while ($p = mysqli_fetch_array($stock)) { echo '"' . $p['stock'] . '",';}?>],
                             backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)',
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(200, 120, 60, 0.2)',
-                                'rgba(55, 100, 180, 0.2)',
-                                'rgba(60, 170, 240, 0.2)',
-                                'rgba(25, 20, 80, 0.2)',
-                                'rgba(175, 195, 195, 0.2)',
-                                'rgba(150, 100, 250, 0.2)',
-                                'rgba(77, 66, 55, 0.2)'
-                            ],
-                            borderColor: [
                                 'rgba(255,99,132,1)',
                                 'rgba(54, 162, 235, 1)',
                                 'rgba(255, 206, 86, 1)',
                                 'rgba(75, 192, 192, 1)',
                                 'rgba(153, 102, 255, 1)',
                                 'rgba(255, 159, 64, 1)',
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)',
-                                'rgba(55, 100, 180, 0.2)',
-                                'rgba(60, 170, 240, 0.2)',
-                                'rgba(25, 20, 80, 0.2)',
-                                'rgba(175, 195, 195, 0.2)',
-                                'rgba(150, 100, 250, 0.2)',
-                                'rgba(77, 66, 55, 0.2)'
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(55, 100, 180, 1)',
+                                'rgba(60, 170, 240, 1)',
+                                'rgba(25, 20, 80, 1)',
+                                'rgba(175, 195, 195, 1)',
+                                'rgba(150, 100, 250, 1)',
+                                'rgba(77, 66, 55, 1)'
                             ],
-                            borderWidth: 5
+                            borderColor: 'transparent',
+                            borderWidth: 2.5,
+                            barPercentage: 0.8,
                         }]
                 },
                 options: {
                     scales: {
                         yAxes: [{
                                 ticks: {
-                                    beginAtZero: true
+                                    stepSize: 15
                                 }
                             }]
                     }

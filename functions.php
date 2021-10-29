@@ -109,15 +109,25 @@ function tambahpenarikan($data){
     $saldoPenarikan = (stripslashes($data["saldoPenarikan"]));
 
 	$idUser = $id1['idUser'];
-	$namaUser = $id1['namaUser'];	
+	$namaUser = $id1['namaUser'];
+	$saldoUser = $id1['saldo'];
 
-$query = "INSERT INTO penarikan
+	$totalDataBank = mysqli_query($conn, "SELECT * FROM saldo_bank ORDER BY idTransaksi DESC LIMIT 1");
+	$ambilSaldo = mysqli_fetch_array($totalDataBank);
+	$totalSaldo = $ambilSaldo['totalSaldo'];
+	if ($saldoPenarikan > $totalSaldo) {
+		return 0;
+	} elseif($saldoPenarikan > $saldoUser) {
+		return 0;
+	} else {
+		$query = "INSERT INTO penarikan
 		   VALUES
 	   ('$format', '$idUser', '$namaUser', '$tanggal', '$saldoPenarikan')
 	   ";
-mysqli_query($conn, $query);
+	   mysqli_query($conn, $query);
+	   return mysqli_affected_rows($conn);
+	}
 
-return mysqli_affected_rows($conn);
 }
 
 function updateUsers2($data){

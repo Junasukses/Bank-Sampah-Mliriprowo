@@ -25,6 +25,7 @@ $penjualan = query("SELECT * FROM penjualan ORDER BY idJual ASC");
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/manual/styleuser.css">
     <link rel="stylesheet" type="text/css" href="css/manual/style.css">
@@ -105,7 +106,6 @@ $penjualan = query("SELECT * FROM penjualan ORDER BY idJual ASC");
         </div>
     <div class="box-1 text-center">
         <h2 style="font-size: 30px; color: #262626;">Daftar Penjualan Sampah</h2>
-        <div class="card">
           <div class="card-body">
         
           <table id="example" class="display" cellspacing="0" width="100%" border="0" >
@@ -120,7 +120,7 @@ $penjualan = query("SELECT * FROM penjualan ORDER BY idJual ASC");
                 <th>Nomor Pembeli</th>
                 <th>Harga</th>
                 <th>Total Pendapatan</th>
-                <th>Aksi</th>
+                <th colspan="2">Aksi</th>
             </tr>
             </thead>
             <tbody>
@@ -128,7 +128,7 @@ $penjualan = query("SELECT * FROM penjualan ORDER BY idJual ASC");
 					  <?php foreach ( $penjualan as $row)  : ?>
             <?php $kode = $row["idSampah"] ?>
             <?php $namaUser = query("SELECT namaSampah FROM sampah WHERE idSampah = '$kode' "); ?>
-            <tr align="center">
+            <tr align="center" class="shadow-tr">
                 <td><?php echo $i; ?></td>
                 <td><?php echo $row['idJual'] ?></td>
                 <?php foreach ( $namaUser as $user)  : ?>
@@ -142,11 +142,12 @@ $penjualan = query("SELECT * FROM penjualan ORDER BY idJual ASC");
                 <td><?php echo "Rp. ".number_format($row['totalPendapatan'], 2, ",", ".") ?></td>
                 <td>
                     <a href="editPenjualan.php?idPenjualan=<?php echo $row["idJual"]; ?>">
-                    <button class="btn_edit"><i class="fa fa-pencil"></i>Edit</button> 
+                    <img src="img/aset/logoEdit.png" width="20">
                     </a>
-                    
+                </td>
+                <td>
                     <a onclick="return confirm('Anda yakin ingin menghapus data ini?')" href="hapusPenjualan.php?action=delete&id=<?php echo $row["idJual"]; ?>">
-                    <button class="btn_hapus"><i class="fa fa-trash-o"></i>Hapus</button>
+                    <img src="img/aset/logoTrash.png" width="20">
                     </a>
                 </td>
             </tr>

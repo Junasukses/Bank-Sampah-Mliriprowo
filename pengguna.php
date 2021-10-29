@@ -27,6 +27,7 @@ $pengguna = query("SELECT * FROM users ORDER BY idUser ASC");
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="css/manual/styleuser.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/manual/style.css">
@@ -105,8 +106,7 @@ $pengguna = query("SELECT * FROM users ORDER BY idUser ASC");
             <!--sidebar end-->
         </div>
     <div class="box-1 text-center">
-        <h2 style="font-size: 30px; color: #262626;">Daftar Pengguna</h2>
-        <div class="card">
+        <h2 style="font-size: 30px; color: #262626;" class="text-center">Daftar Pengguna</h2>
           <div class="card-body">
         
           <table id="example" class="display" cellspacing="0" width="100%" border="0" >
@@ -121,13 +121,13 @@ $pengguna = query("SELECT * FROM users ORDER BY idUser ASC");
                 <th>Jumlah Setoran</th>
                 <th>Jumlah Penarikan</th>
                 <th>Saldo</th>
-                <th>Aksi</th>
+                <th colspan="2">Aksi</th>
             </tr>
             </thead>
             <tbody>
             <?php $i = 1; ?>
 					  <?php foreach ( $pengguna as $row)  : ?>
-            <tr align="center">
+            <tr align="center" class="shadow-tr">
                 <td><?php echo $i; ?></td>
                 <td><?php echo $row['idUser'] ?></td>
                 <td><?php echo $row['namaUser'] ?></td>
@@ -139,11 +139,12 @@ $pengguna = query("SELECT * FROM users ORDER BY idUser ASC");
                 <td><?php echo "Rp. ".number_format($row['saldo'], 2, ",", ".")  ?></td>
                 <td>
                     <a href="editpengguna.php?idUser=<?php echo $row["idUser"]; ?>">
-                    <button class="btn_edit"><i class="fa fa-pencil"></i>Edit</button> 
-                    </a>
-                    <br>
+                    <img src="img/aset/logoEdit.png" width="20">
+                    </a>          
+                </td>
+                <td>
                     <a onclick="return confirm('Anda yakin ingin menghapus data ini?')" href="hapus.php?action=delete&id=<?php echo $row["idUser"]; ?>">
-                    <button class="btn_hapus"><i class="fa fa-trash-o"></i>Hapus</button>
+                    <img src="img/aset/logoTrash.png" width="20">
                     </a>
                 </td>
             </tr>

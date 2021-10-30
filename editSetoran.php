@@ -190,7 +190,7 @@ if (isset($_POST["submit"]) ){
             </div>
             <div class="form-group mt-2">
                 <label for="berat">Berat :</label>
-                <input type="text" name="berat" id="berat" required="required" class="form-order" style="width: 93%;"value="<?php echo $setor["berat"]; ?>">
+                <input type="text" name="berat" id="berat" required="required" class="form-order" style="width: 92%;"value="<?php echo $setor["berat"]; ?>">
                 <select name="satuan" id="satuan" required="required" class="btn btn-info dropdown-toggle" value="<?php echo $sampah["satuan"]; ?>">
                     <option class="dropdown-item">KG</option>
                     <option class="dropdown-item">PC</option>

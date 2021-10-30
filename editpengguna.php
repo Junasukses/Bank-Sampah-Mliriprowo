@@ -123,7 +123,7 @@ if (isset($_POST["submit"]) ){
             <!--sidebar end-->
         </div>
         <div class="box-1">
-            <h2 class="text-center" style="font-size: 30px; color: #262626;">Data Pengguna</h2>
+            <h2 class="text-center" style="font-size: 30px; color: #262626;">Edit Data Pengguna</h2>
             <div class="card">
             <div class="card-body">
             <form action="" method="post" class="mt-3">

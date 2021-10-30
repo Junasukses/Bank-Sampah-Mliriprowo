@@ -56,7 +56,7 @@ $penarikan = query("SELECT * FROM penarikan WHERE idUser = '$id' ORDER BY tglTar
             <div class="sidebar">
                 <div class="sidebar-menu">
                     <center class="profile">
-                        <img src="img/logo/user.png" alt="">
+                        <img src="img/user/<?= $biodata["gambar"]  ?>" alt="">
                         <p><?php echo $biodata["namaUser"]; ?></p>
                     </center>
                     <li class="item">

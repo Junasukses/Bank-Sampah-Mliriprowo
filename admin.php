@@ -129,19 +129,19 @@ foreach ($stock as $row){
             <section>
               <div class="form-group">
                 <label class="">Nomor Induk Admin:</label>
-                <input type="text" style="cursor: not-allowed; width: 100%" disabled="disabled" value="<?php echo $biodata["IdAdmin"]; ?>" />
+                <input type="text" style="cursor: not-allowed; width: 100%;" disabled="disabled" value="<?php echo $biodata["IdAdmin"]; ?>" />
               </div>
               <div class="form-group">
                 <label class="">Nama Admin:</label>
-                <input type="text" style="cursor: not-allowed; width: 100%" disabled="disabled" value="<?php echo $biodata["namaAdmin"]; ?>"/>
+                <input type="text" style="cursor: not-allowed; width: 100%;" disabled="disabled" value="<?php echo $biodata["namaAdmin"]; ?>"/>
               </div>
               <div class="form-group">
                 <label class="">Username:</label>
-                <input type="text" style="cursor: not-allowed; width: 100%" disabled="disabled" value="<?php echo $biodata["usernameAdmin"]; ?>"/>
+                <input type="text" style="cursor: not-allowed; width: 100%;" disabled="disabled" value="<?php echo $biodata["usernameAdmin"]; ?>"/>
               </div>
               <div class="form-group">
                 <label class="">Level:</label>
-                <input type="text" style="cursor: not-allowed; width: 100%" disabled="disabled" value="<?php echo $biodata["level"]; ?>"/>
+                <input type="text" style="cursor: not-allowed; width: 100%;" disabled="disabled" value="<?php echo $biodata["level"]; ?>"/>
               </div>
               <a href="editAdmin.php?IdAdmin=<?php echo $biodata["IdAdmin"]; ?>">
               <button type="submit" name="submit" class="btn btn-primary btn-lg" style="width: 100%;">Edit Data</button></a> 

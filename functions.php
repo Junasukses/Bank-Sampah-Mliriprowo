@@ -590,6 +590,51 @@ function uploadberita(){
 
 }
 
+function uploadGambar(){
+	$namafile = $_FILES['gambar']['name'];
+	$ukuranfile = $_FILES['gambar']['size'];
+	$error = $_FILES['gambar']['error'];
+	$tmpname = $_FILES['gambar']['tmp_name'];	
+
+	// cek apaakadah  ada gambar yg di upload
+	if ($error === 4){
+		echo "<script>
+				alert('pilih gambar terlebih dahulu');
+				</script>
+				";
+	}
+	// cek apakah yang di uypload gambar
+	$ekstensigambarvalid = ['jpg','jpeg','png'];
+	$ekstensigambar = explode('.', $namafile);
+	$ekstensigambar = strtolower(end($ekstensigambar));
+	if (!in_array($ekstensigambar, $ekstensigambarvalid)){
+		echo "<script>
+				alert('yang anda upload bukan gambar');
+				</script>
+				";
+		return false;
+	}
+
+	// cek ukuran gambar 
+	if ($ukuranfile > 1000000){
+		echo "<script>
+				alert('ukuran gambar terlalu besar');
+				</script>
+				";
+		return false;
+	}
+	// generate nama file
+	$namafilebaru = uniqid();
+	$namafilebaru .=  '.';
+	$namafilebaru .= $ekstensigambar;
+	// lolos pengecekan semua
+	move_uploaded_file($tmpname, 'img/user/' . $namafilebaru);
+
+	return $namafilebaru;
+
+
+}
+
 function ubah($data) {
 
 	global $conn;
@@ -604,6 +649,13 @@ function ubah($data) {
 	$password2 = mysqli_real_escape_string($conn, $data["password2"]);
 	$jmlSetoran = $_POST['jmlSetoran'];
     $saldo = $_POST['saldo'];
+	$gambarlama = htmlspecialchars($data["gambarlama"]);
+	// cek apakah user milih gambar baru atau tidak
+	if($_FILES['gambar']['error']===4){
+		$gambar = $gambarlama;
+	}else{
+		$gambar =  uploadGambar();
+	}
 	
 	if ( $password !== $password2 ) {
 		echo "<script>
@@ -614,6 +666,7 @@ function ubah($data) {
 
 	$query ="UPDATE users SET 
 				namaUser = '$namaUser',
+				gambar = '$gambar',
 				nik = '$nik',
 				alamat = '$alamat',
 				telepon = '$telepon',

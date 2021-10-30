@@ -141,10 +141,11 @@ if (isset($_POST["submit"]) ){
             </div>
             <div class="form-group mt-2">
                 <label for="isi">Isi Berita :</label>
-                <textarea name="isi" id="isi" cols="135" rows="3"><?php echo $berita["isi"]; ?></textarea>
+                <textarea name="isi" id="isi" cols="116" rows="3"><?php echo $berita["isi"]; ?></textarea>
             </div>
             <div class="form-group mt-2">
                 <label for="foto">Gambar :</label>
+                <img src="img/berita/<?= $berita["gambar"]  ?>" width="30%" height="20%"> <br>
                 <input type="file" name="foto" id="foto" class="form-order" value="img/berita/<?php echo $berita["gambar"]; ?>">
             </div>
             <div class="form-group mt-2">

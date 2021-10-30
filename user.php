@@ -11,7 +11,7 @@ if ( !isset($_SESSION["login"]) ){
 
 $id = $_SESSION["idUser"];
 $biodata = query("SELECT * FROM users WHERE idUser = '$id'")[0];
-
+error_reporting(0);
 ?>
 
 <!doctype html>
@@ -53,7 +53,7 @@ $biodata = query("SELECT * FROM users WHERE idUser = '$id'")[0];
             <div class="sidebar">
                 <div class="sidebar-menu">
                     <center class="profile">
-                        <img src="img/logo/user.png" alt="">
+                        <img src="img/user/<?= $biodata["gambar"]  ?>" alt="">
                         <p><?php echo $biodata["namaUser"]; ?></p>
                     </center>
                     <li class="item">
@@ -86,82 +86,47 @@ $biodata = query("SELECT * FROM users WHERE idUser = '$id'")[0];
             <!--sidebar end-->
         </div>
 
-<!--     <div class="sidebar">
-			<ul>
-				<li>
-					<a href="" style="text-align: center; padding: 30px 0 30px 0; font-size: 20px;">Welcome, <br><?php echo $biodata["namaUser"]; ?> </a>
-				</li>
-
-				<li>
-					<a href="user.php"><span class="fa fa-user" aria-hidden="true"></span>Data User</a>
-				</li>	
-				 	
-				<li>
-					<a href="hasilUser.php"><span class="fas fa-trash-restore-alt" aria-hidden="true"></span>Hasil Pengumpulan</a>
-				</li>
-				
-				<li>
-					<a href="setoranUser.php"><span class="fas fa-comments-dollar" aria-hidden="true"></span>Transaksi Penarikan</a>
-				</li>
-
-				<li>
-					<a href="pengumpulanUser.php"><span class="fas fa-chart-bar" aria-hidden="true"></span>Grafik Pengumpulan</a>
-				</li>
-
-				<li>
-					<a href="logout.php"><span class="fas fa-sign-out-alt" aria-hidden="true"></span>Logout</a>
-				</li>
-
-        <br><br><br><br><br><br>
-        <img src="img/logo/logo.png" style="width:75%" class="ms-4" alt="">
-        <p class="text-center text-warning">Bank Sampah Mliriprowo</p>
-
-			</ul>
-		</div> -->
-
-      <div class="box-1 text-center">
-        <h2 style="font-size: 30px; color: #262626;">Data Nasabah</h2>
+      <div class="box-1">
+        <h2 style="font-size: 30px; color: #262626;" class="text-center">Data Nasabah</h2>
         <div class="card">
           <div class="card-body">
         
             <section>
               <div class="form-group">
                 <label class="text-left">Nomor Induk Nasabah:</label>
-                <input type="text" style="cursor: not-allowed;" disabled="disabled" value="<?php echo $biodata["idUser"]; ?>" />
+                <input type="text" style="cursor: not-allowed; width: 100%;" disabled="disabled" value="<?php echo $biodata["idUser"]; ?>" />
               </div>
               <div class="form-group">
                 <label class="">Nama Nasabah:</label>
-                <input type="text" style="cursor: not-allowed;" disabled="disabled" value="<?php echo $biodata["namaUser"]; ?>"/>
+                <input type="text" style="cursor: not-allowed; width: 100%;" disabled="disabled" value="<?php echo $biodata["namaUser"]; ?>"/>
               </div>
               <div class="form-group">
                 <label class="">NIK:</label>
-                <input type="text" style="cursor: not-allowed;" disabled="disabled" value="<?php echo $biodata["nik"]; ?>"/>
+                <input type="text" style="cursor: not-allowed; width: 100%;" disabled="disabled" value="<?php echo $biodata["nik"]; ?>"/>
               </div>
               <div class="form-group">
                 <label class="">Alamat:</label>
-                <input type="text" style="cursor: not-allowed;" disabled="disabled" value="<?php echo $biodata["alamat"]; ?>"/>
+                <input type="text" style="cursor: not-allowed; width: 100%;" disabled="disabled" value="<?php echo $biodata["alamat"]; ?>"/>
               </div>
               <div class="form-group">
                 <label class="">Nomor Telepon:</label>
-                <input type="text" style="cursor: not-allowed;" disabled="disabled" value="<?php echo $biodata["telepon"]; ?>"/>
+                <input type="text" style="cursor: not-allowed; width: 100%;" disabled="disabled" value="<?php echo $biodata["telepon"]; ?>"/>
               </div>
               <div class="form-group">
                 <label class="">Username:</label>
-                <input type="text" style="cursor: not-allowed;" disabled="disabled" value="<?php echo $biodata["username"]; ?>"/>
-              </div>
-              <div class="form-group">
-                <label class="">Password User:</label>
-                <input type="text" style="cursor: not-allowed;" disabled="disabled" value="<?php echo $biodata["passwordUser"]; ?>"/>
+                <input type="text" style="cursor: not-allowed; width: 100%;" disabled="disabled" value="<?php echo $biodata["username"]; ?>"/>
               </div>
               <div class="form-group">
                 <label class="">Jumlah Setoran:</label>
-                <input type="text" style="cursor: not-allowed;" disabled="disabled" value="<?php echo $biodata["jmlSetoran"]; ?>"/>
+                <input type="text" style="cursor: not-allowed; width: 100%;" disabled="disabled" value="<?php echo $biodata["jmlSetoran"]; ?>"/>
               </div>
               <div class="form-group">
                 <label class="">Saldo Total (Rp):</label>
-                <input type="text" style="cursor: not-allowed;" disabled="disabled" value="<?php echo $biodata["saldo"]; ?>"/>
+                <input type="text" style="cursor: not-allowed; width: 100%;" disabled="disabled" value="<?php echo $biodata["saldo"]; ?>"/>
               </div>
-              <a href="ubahuser.php?idUser=<?php echo $biodata["idUser"]; ?>"><input type="button" href="" value="Edit Data" /></a> 
+              <a href="ubahuser.php?idUser=<?php echo $biodata["idUser"]; ?>">
+              <button type="submit" name="submit" class="btn btn-primary btn-lg" style="width: 100%;">Edit Data</button>
+              </a> 
             </section>
           </div>
       </div>

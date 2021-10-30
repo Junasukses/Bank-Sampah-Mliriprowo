@@ -25,6 +25,7 @@ $setoran = query("SELECT * FROM setoran WHERE idUser = '$id' ORDER BY tglSetor A
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="test/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/manual/styleuser.css">
@@ -56,7 +57,7 @@ $setoran = query("SELECT * FROM setoran WHERE idUser = '$id' ORDER BY tglSetor A
             <div class="sidebar">
                 <div class="sidebar-menu">
                     <center class="profile">
-                        <img src="img/logo/user.png" alt="">
+                        <img src="img/user/<?= $biodata["gambar"]  ?>" alt="">
                         <p><?php echo $biodata["namaUser"]; ?></p>
                     </center>
                     <li class="item">
@@ -91,41 +92,7 @@ $setoran = query("SELECT * FROM setoran WHERE idUser = '$id' ORDER BY tglSetor A
 
     <div class="box-1 text-center">
       <h2 style="font-size: 30px; color: #262626;">Data Pengumpulan Anda</h2>
-      <div class="row text-white">
-        <div class="card bg-info ms-3 me-4" style="width: 25rem;">
-            <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-balance-scale-right"></i>
-                </div>
-                <h5 class="card-title">JUMLAH SALDO ANDA</h5><br>
-                <div class="display-4 fw-bold" style="font-size: 40px"><?php echo "Rp. ".number_format(($biodata['saldo']), 2, ",", ".") ?></div>
-            </div>
-        </div>
-
-        <div class="card bg-success ms-5 me-4" style="width: 18rem;">
-            <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-cubes"></i>
-                </div>
-                <h5 class="card-title">JUMLAH SETORAN SAMPAH ANDA</h5>
-                <div class="display-4 fw-bold"><?php echo $biodata['jmlSetoran']; ?></div>
-            </div>
-        </div>
-
-        <div class="card bg-danger ms-5" style="width: 18rem;">
-            <div class="card-body">
-                <div class="card-body-icon">
-                    <i class="fas fa-users me-2"></i>
-                </div>
-                <h5 class="card-title">JUMLAH PENARIKAN SALDO ANDA</h5>
-                <div class="display-4 fw-bold">
-                  <?php echo $biodata['jmlPenarikan']; ?>
-                </div>
-                <a href="setoranUser.php"><p class="card-text text-white">Lihat Detail <i class="fas fa-angle-double-right ms-2"></i></p></a>
-            </div>
-        </div>
-      </div>
-      <br><br>
+        
       <div class="card">
           <div class="card-body">
         
@@ -170,7 +137,31 @@ $setoran = query("SELECT * FROM setoran WHERE idUser = '$id' ORDER BY tglSetor A
           </script>
           </div>
       </div>
-
+      <section class="statis mt-4 text-center">
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="box bg-warning p-3">
+            <i class="fas fa-balance-scale-right"></i>
+            <h3><?php echo "Rp. ".number_format(($biodata['saldo']), 2, ",", ".") ?></h3>
+            <p class="lead">Jumlah Saldo Anda</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="box bg-danger p-3">
+            <i class="fas fa-cubes"></i>
+            <h3><?php echo $biodata['jmlSetoran']; ?></h3>
+            <p class="lead">Jumlah Setoran Sampah</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="box bg-success p-3">
+            <i class="fas fa-users me-2"></i>
+            <h3><?php echo $biodata['jmlPenarikan']; ?></h3>
+            <p class="lead">Jumlah Penarikan Saldo Anda</p>
+          </div>
+        </div>
+      </div>
+    </section>
 		</div>
 
     <!-- Optional JavaScript; choose one of the two! -->

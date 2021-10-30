@@ -65,7 +65,7 @@ $jumlahDataPengguna = mysqli_num_rows($pengguna);
             <div class="sidebar">
                 <div class="sidebar-menu">
                     <center class="profile">
-                        <img src="img/logo/user.png" alt="">
+                        <img src="img/user/<?= $biodata["gambar"]  ?>" alt="">
                         <p><?php echo $biodata["namaUser"]; ?></p>
                     </center>
                     <li class="item">
@@ -101,7 +101,7 @@ $jumlahDataPengguna = mysqli_num_rows($pengguna);
     <div class="box-1 text-center">
         <h2 style="font-size: 30px; color: #262626;">Perbandingan Jumlah Setoran Users</h2>
         <div class="container">
-            <canvas id="myChart" width="100" height="100"></canvas>
+            <canvas id="myChart" width="100" height="50%"></canvas>
         </div>
 
         <script>
@@ -114,23 +114,19 @@ $jumlahDataPengguna = mysqli_num_rows($pengguna);
                             label: 'Jumlah Pengumpulan',
                             data: ["<?php echo $jumlahDataPengguna?>", "<?php echo $jumlahDataKeseluruhan?>"],
                             backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-
-                            ],
-                            borderColor: [
                                 'rgba(255,99,132,1)',
                                 'rgba(54, 162, 235, 1)',
 
                             ],
-                            borderWidth: 5
+                            borderWidth: 2.5,
+                            barPercentage: 0.8
                         }]
                 },
                 options: {
                     scales: {
                         yAxes: [{
                                 ticks: {
-                                    beginAtZero: true
+                                    stepSize: 10
                                 }
                             }]
                     }

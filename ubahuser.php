@@ -30,6 +30,7 @@ if (isset($_POST["submit"]) ){
 	}
 
  }
+error_reporting(0); 
 ?>
 
 <!doctype html>
@@ -71,7 +72,7 @@ if (isset($_POST["submit"]) ){
             <div class="sidebar">
                 <div class="sidebar-menu">
                     <center class="profile">
-                        <img src="img/logo/user.png" alt="">
+                        <img src="img/user/<?= $biodata["gambar"]  ?>" alt="">
                         <p><?php echo $biodata["namaUser"]; ?></p>
                     </center>
                     <li class="item">
@@ -104,31 +105,31 @@ if (isset($_POST["submit"]) ){
             <!--sidebar end-->
         </div>
         
-      <div class="box-1 text-center">
-        <h2 style="font-size: 30px; color: #262626;">Data Nasabah</h2>
+      <div class="box-1">
+        <h2 style="font-size: 30px; color: #262626;" class="text-center">Edit Data Nasabah</h2>
         <div class="card">
           <div class="card-body">
-          <form action="" method="post" class="mt-3">
+          <form action="" method="post" class="mt-3" enctype="multipart/form-data">
             <div class="form-group mt-2">
+            <input type="hidden" name="gambarlama" value="<?= $data["gambar"]; ?>">
+            <input type="hidden" name="jmlSetoran" id="jmlSetoran" class="form-control mt-2" placeholder="" value="<?php echo $biodata["jmlSetoran"]; ?>">
+            <input type="hidden" name="saldo" id="saldo" class="form-control mt-2" placeholder="" value="<?php echo $biodata["saldo"]; ?>">
             <label for="nama">Nama Lengkap</label>
             <div class="input-group">
-                <div class="input-group-prepend mt-2">
-                <div class="input-group-text">
-                    <i class="fas fa-file-signature mt-2"></i>
-                </div>
-                </div>
                 <input type="text" name="nama" id="nama" class="form-control mt-2" placeholder="Masukkan Nama Lengkap Anda" value="<?php echo $biodata["namaUser"]; ?>">
             </div>
             </div>
 
             <div class="form-group mt-2">
+            <label for="nama">Gambar</label>
+            <div class="input-group">
+                <img src="img/user/<?= $biodata["gambar"]  ?>" width="30%" height="20%"> <br><input type="file" name="gambar" id="gambar">
+            </div>
+            </div>
+					
+            <div class="form-group mt-2">
             <label for="nik">NIK</label>
             <div class="input-group">
-                <div class="input-group-prepend mt-2">
-                <div class="input-group-text">
-                    <i class="fas fa-address-card mt-2"></i>
-                </div>
-                </div>
                 <input type="text" name="nik" id="nik" class="form-control mt-2" placeholder="Masukkan Nomor Induk Kewarganegaraan" value="<?php echo $biodata["nik"]; ?>">
             </div>
             </div>
@@ -136,11 +137,6 @@ if (isset($_POST["submit"]) ){
             <div class="form-group mt-2">
             <label for="alamat">Alamat</label>
             <div class="input-group">
-                <div class="input-group-prepend mt-2">
-                <div class="input-group-text">
-                    <i class="fas fa-map-marker-alt mt-2"></i>
-                </div>
-                </div>
                 <input type="text" name="alamat" id="alamat" class="form-control mt-2" placeholder="Masukkan Alamat Anda (lengkap dengan RT/RW)" value="<?php echo $biodata["alamat"]; ?>">
             </div>
             </div>
@@ -148,11 +144,6 @@ if (isset($_POST["submit"]) ){
             <div class="form-group mt-2">
             <label for="telepon">Nomor Telepon</label>
             <div class="input-group">
-                <div class="input-group-prepend mt-2">
-                <div class="input-group-text">
-                    <i class="fas fa-tty mt-2"></i>
-                </div>
-                </div>
                 <input type="text" name="telepon" id="telepon" class="form-control mt-2" placeholder="Masukkan Nomor Telepon Anda" value="<?php echo $biodata["telepon"]; ?>">
             </div>
             </div>
@@ -160,11 +151,6 @@ if (isset($_POST["submit"]) ){
             <div class="form-group mt-2">
             <label for="username">Username</label>
             <div class="input-group">
-                <div class="input-group-prepend mt-2">
-                <div class="input-group-text">
-                    <i class="fas fa-user mt-2"></i>
-                </div>
-                </div>
                 <input type="text" name="username" id="username" class="form-control mt-2" placeholder="Masukkan Username Anda" value="<?php echo $biodata["username"]; ?>">
             </div>
             </div>
@@ -172,11 +158,6 @@ if (isset($_POST["submit"]) ){
             <div class="form-group mt-2">
             <label for="password">Password</label>
             <div class="input-group">
-                <div class="input-group-prepend mt-2">
-                <div class="input-group-text">
-                    <i class="fas fa-lock mt-2"></i>
-                </div>
-                </div>
                 <input type="password" name="password" id="password" class="form-control mt-2" placeholder="Masukkan Password Anda" value="<?php echo $biodata["passwordUser"]; ?>">
             </div>
             </div>
@@ -184,16 +165,11 @@ if (isset($_POST["submit"]) ){
             <div class="form-group mt-2">
             <label for="password2">Konfirmasi Password</label>
             <div class="input-group">
-                <div class="input-group-prepend mt-2">
-                <div class="input-group-text">
-                    <i class="fas fa-unlock-alt mt-2"></i>
-                </div>
-                </div>
                 <input type="password" name="password2" id="password2" class="form-control mt-2" placeholder="Konfirmasi Password Anda" value="<?php echo $biodata["passwordUser"]; ?>">
             </div>
             </div>
 
-            <div class="form-group mt-2">
+            <!-- <div class="form-group mt-2">
             <div class="input-group">
                 <div class="input-group-prepend mt-2">
                 </div>
@@ -207,9 +183,9 @@ if (isset($_POST["submit"]) ){
                 </div>
                 <input type="hidden" name="saldo" id="saldo" class="form-control mt-2" placeholder="" value="<?php echo $biodata["saldo"]; ?>">
             </div>
-            </div>
+            </div> -->
 
-            <button type="submit" name="submit" class="btn-regist btn-primary mt-3 me-2 ms-1" style="width: 100%;">SUBMIT</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-lg" style="width: 100%;">SUBMIT</button>
             </form>
           </div>
       </div>

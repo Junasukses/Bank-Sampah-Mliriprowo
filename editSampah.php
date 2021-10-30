@@ -150,7 +150,7 @@ if (isset($_POST["submit"]) ){
             <div class="form-group mt-2">
                 <label for="satuan">Satuan :</label>
                 <input type="text" name="harga" id="harga"
-                required="required" autofocus placeholder="Rp. " class="form-order" style="width: 93%;" value="<?php echo $sampah["harga"]; ?>">
+                required="required" autofocus placeholder="Rp. " class="form-order" style="width: 92%;" value="<?php echo $sampah["harga"]; ?>">
                 <select name="satuan" id="satuan" required="required" class="btn btn-info dropdown-toggle" value="<?php echo $sampah["satuan"]; ?>">
                     <option class="dropdown-item">KG</option>
                     <option class="dropdown-item">PC</option>
@@ -160,6 +160,7 @@ if (isset($_POST["submit"]) ){
             
             <div class="form-group mt-2">
                 <label for="foto">Gambar :</label>
+                <img src="img/sampah/<?= $sampah["gambar"]  ?>" width="30%" height="20%"> <br>
                 <input type="file" name="foto" id="foto" class="form-order" value="img/sampah/<?php echo $sampah["gambar"]; ?>">
             </div>
             <div class="form-group mt-2">

@@ -126,11 +126,19 @@ if (isset($_POST["submit"]) ){
             <h2 class="text-center" style="font-size: 30px; color: #262626;">Edit Data Pengguna</h2>
             <div class="card">
             <div class="card-body">
-            <form action="" method="post" class="mt-3">
+            <form action="" method="post" class="mt-3" enctype="multipart/form-data">
+            <input type="hidden" name="gambarlama" value="<?= $data["gambar"]; ?>">
                 <div class="form-group mt-2">
                 <label for="nama">Nama Lengkap</label>
                 <div class="input-group">
                     <input type="text" name="nama" id="nama" class="form-control mt-2" placeholder="" value="<?php echo $pengguna["namaUser"]; ?>">
+                </div>
+                </div>
+
+                <div class="form-group mt-2">
+                <label for="nama">Gambar :</label>
+                <div class="input-group">
+                    <img src="img/user/<?= $pengguna["gambar"]  ?>" width="30%" height="20%"> <br><input type="file" name="gambar" id="gambar">
                 </div>
                 </div>
 

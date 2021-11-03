@@ -115,7 +115,7 @@ $penjualan = query("SELECT * FROM penjualan ORDER BY idJual ASC");
                 <th>ID Penjualan</th>
                 <th>Nama Sampah</th>
                 <th>Berat</th>
-                <th>Tanggal Penjualank</th>
+                <th>Tanggal Penjualan</th>
                 <th>Nama Pembeli</th>
                 <th>Nomor Pembeli</th>
                 <th>Harga</th>

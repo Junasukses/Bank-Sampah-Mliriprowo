@@ -11,14 +11,14 @@ require 'functions.php';
 $id = $_GET["id"];
 
 
-if (hapus($id) > 0){
+if (hapususer($id) > 0){
 	echo "
 		<script>
 			alert('Data berhasil dihapus');
 			document.location.href = 'pengguna.php';
 		</script>
 	";
-}elseif(hapus2($id) > 0){
+}elseif(hapussampah($id) > 0){
 	echo "
 	<script>
 		alert('Data berhasil dihapus');

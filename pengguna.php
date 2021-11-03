@@ -115,6 +115,7 @@ $pengguna = query("SELECT * FROM users ORDER BY idUser ASC");
                 <th>No</th>
                 <th>NIP</th>
                 <th>Nama</th>
+                <th>Foto</th>
                 <th>NIK</th>
                 <th>Alamat</th>
                 <th>Telepon</th>
@@ -130,6 +131,7 @@ $pengguna = query("SELECT * FROM users ORDER BY idUser ASC");
             <tr align="center" class="shadow-tr">
                 <td><?php echo $i; ?></td>
                 <td><?php echo $row['idUser'] ?></td>
+                <td><img src="img/user/<?= $row["gambar"]  ?>" width="90" height="100"></td>
                 <td><?php echo $row['namaUser'] ?></td>
                 <td><?php echo $row['nik'] ?></td>
                 <td><?php echo $row['alamat'] ?></td>

@@ -51,7 +51,8 @@ require 'functions.php';
 
   <div class="isi-content mx-auto" style="width: 70%; margin-top: 5%; box-shadow: 0 3px 20px rgba(0,0,0,0.4); padding: 40px;">
       <h3 class="text-center">FORM REGISTRASI</h3><hr style="width:75%; height: 5px;" class="mx-auto bg-danger">
-      <form action="" method="post" class="mt-3">
+      <form action="" method="post" class="mt-3" enctype="multipart/form-data">
+      <input type="hidden" name="gambarlama" value="<?= $data["gambar"]; ?>">
 
         <div class="form-group mt-2">
           <label for="nama">Nama Lengkap</label>
@@ -62,6 +63,15 @@ require 'functions.php';
               </div>
             </div>
             <input type="text" name="nama" id="nama" class="form-control mt-2" placeholder="Masukkan Nama Lengkap Anda">
+          </div>
+        </div>
+
+        <div class="form-group mt-2">
+          <label for="nama">Foto</label>
+          <div class="input-group">
+            <div class="input-group-prepend mt-2">
+            </div>
+            <input type="file" name="gambar" id="gambar" class="form-control mt-2">
           </div>
         </div>
 
@@ -85,7 +95,7 @@ require 'functions.php';
                 <i class="fas fa-map-marker-alt mt-2"></i>
               </div>
             </div>
-            <input type="text" name="alamat" id="alamat" class="form-control mt-2" placeholder="Masukkan Alamat Anda (lengkap dengan RT/RW)">
+            <input type="text" name="alamat" id="alamat" class="form-control mt-2" placeholder="Masukkan Alamat Anda (lengkap dengan RT/RW)"> 
           </div>
         </div>
 

@@ -114,6 +114,7 @@ error_reporting(0);
             <input type="hidden" name="gambarlama" value="<?= $data["gambar"]; ?>">
             <input type="hidden" name="jmlSetoran" id="jmlSetoran" class="form-control mt-2" placeholder="" value="<?php echo $biodata["jmlSetoran"]; ?>">
             <input type="hidden" name="saldo" id="saldo" class="form-control mt-2" placeholder="" value="<?php echo $biodata["saldo"]; ?>">
+            
             <label for="nama">Nama Lengkap</label>
             <div class="input-group">
                 <input type="text" name="nama" id="nama" class="form-control mt-2" placeholder="Masukkan Nama Lengkap Anda" value="<?php echo $biodata["namaUser"]; ?>">

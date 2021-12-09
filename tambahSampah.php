@@ -16,23 +16,29 @@ if (isset($_POST["submit"]) ){
 
 	
 	if (tambahsampah($_POST) > 0 ) {
-    if (tambahstock($_POST) > 0 ) {
-        echo "
-          <script>
-            alert('Sampah Baru Berhasil Ditambahkan');
-            document.location.href = 'sampahAdmin.php';
-          </script>
+        if (tambahstock($_POST) > 0 ) {
+            echo "
+            <script>
+                alert('Sampah Baru Berhasil Ditambahkan');
+                document.location.href = 'sampahAdmin.php';
+            </script>
+            ";
+        } else {
+        echo "	
+            <script>
+            alert('Penambahan Sampah Gagal!');
+            document.location.href = 'tambahSampah.php';
+            </script>
         ";
-    } else {
-      echo "	
-        <script>
-          alert('Penambahan Sampah Gagal!');
-          document.location.href = 'tambahSampah.php';
-        </script>
-      ";
+        }
+	}else{
+        echo "	
+            <script>
+            alert('Penambahan Sampah Gagal!');
+            document.location.href = 'tambahSampah.php';
+            </script>
+        ";
     }
-	
-	} 
 
 }
 
@@ -145,9 +151,9 @@ if (isset($_POST["submit"]) ){
                 required="required" autofocus placeholder="Nama Sampah" autocomplete="off" class="form-order" style="width: 100%;">
             </div>
             <div class="form-group mt-2">
-                <label for="satuan">Satuan :</label>
-                <input type="text" name="harga" id="harga"
-                required="required" autofocus placeholder="Rp. " class="form-order" style="width: 93%;">
+                <label for="satuan">Harga Satuan :</label>
+                <input type="number" name="harga" id="harga"
+                required="required" autofocus placeholder="Rp. " class="form-order" style="min-width: 90%;">
                 <select name="satuan" id="satuan" required="required" class="btn btn-info dropdown-toggle">
                     <option class="dropdown-item">KG</option>
                     <option class="dropdown-item">PC</option>
@@ -160,7 +166,7 @@ if (isset($_POST["submit"]) ){
             </div>
             <div class="form-group mt-2">
                 <label for="keterangan">Keterangan :</label>
-                <input type="textarea" name="keterangan" id="keterangan" autofocus placeholder="keterangan" class="form-order, ket" style="width: 100%;">
+                <input type="textarea" name="keterangan" required="required" id="keterangan" autofocus placeholder="keterangan" class="form-order, ket" style="width: 100%;">
             </div>
                 <button type="submit" name="submit" class="btn btn-primary btn-lg" style="width: 100%;">SUBMIT</button>
                 </form>

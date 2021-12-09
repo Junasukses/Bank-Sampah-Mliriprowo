@@ -167,7 +167,7 @@ if (isset($_POST["submit"]) ){
             </div>
             <div class="form-group mt-2">
                 <label for="jmlPenarikan">Jumlah Saldo yang Ditarik :</label>
-                <input type="text" name="jmlPenarikan" id="jmlPenarikan" required="required" class="form-order" value="<?php echo $penarikan["jmlPenarikan"]; ?>">
+                <input type="number" name="jmlPenarikan" id="jmlPenarikan" required="required" class="form-order" value="<?php echo $penarikan["jmlPenarikan"]; ?>" style="width: 100%;">
             </div>
                 <button type="submit" name="submit" class="btn btn-primary btn-lg" style="width: 100%;">SUBMIT</button>
                

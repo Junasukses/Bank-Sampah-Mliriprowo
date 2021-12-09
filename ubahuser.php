@@ -117,56 +117,56 @@ error_reporting(0);
             
             <label for="nama">Nama Lengkap</label>
             <div class="input-group">
-                <input type="text" name="nama" id="nama" class="form-control mt-2" placeholder="Masukkan Nama Lengkap Anda" value="<?php echo $biodata["namaUser"]; ?>">
+                <input type="text" name="nama" id="nama" required="required" class="form-control mt-2" placeholder="Masukkan Nama Lengkap Anda" value="<?php echo $biodata["namaUser"]; ?>">
             </div>
             </div>
 
             <div class="form-group mt-2">
             <label for="nama">Gambar</label>
             <div class="input-group">
-                <img src="img/user/<?= $biodata["gambar"]  ?>" width="30%" height="20%"> <br><input type="file" name="gambar" id="gambar">
+                <img src="img/user/<?= $biodata["gambar"]  ?>" width="30%" height="20%"> <br><input type="file" name="gambar" id="gambar" required="required">
             </div>
             </div>
 					
             <div class="form-group mt-2">
             <label for="nik">NIK</label>
             <div class="input-group">
-                <input type="text" name="nik" id="nik" class="form-control mt-2" placeholder="Masukkan Nomor Induk Kewarganegaraan" value="<?php echo $biodata["nik"]; ?>">
+                <input type="number" name="nik" id="nik" required="required" class="form-control mt-2" placeholder="Masukkan Nomor Induk Kewarganegaraan" value="<?php echo $biodata["nik"]; ?>">
             </div>
             </div>
 
             <div class="form-group mt-2">
             <label for="alamat">Alamat</label>
             <div class="input-group">
-                <input type="text" name="alamat" id="alamat" class="form-control mt-2" placeholder="Masukkan Alamat Anda (lengkap dengan RT/RW)" value="<?php echo $biodata["alamat"]; ?>">
+                <input type="text" name="alamat" id="alamat" required="required" class="form-control mt-2" placeholder="Masukkan Alamat Anda (lengkap dengan RT/RW)" value="<?php echo $biodata["alamat"]; ?>">
             </div>
             </div>
 
             <div class="form-group mt-2">
             <label for="telepon">Nomor Telepon</label>
             <div class="input-group">
-                <input type="text" name="telepon" id="telepon" class="form-control mt-2" placeholder="Masukkan Nomor Telepon Anda" value="<?php echo $biodata["telepon"]; ?>">
+                <input type="number" name="telepon" id="telepon" required="required" class="form-control mt-2" placeholder="Masukkan Nomor Telepon Anda" value="<?php echo $biodata["telepon"]; ?>">
             </div>
             </div>
 
             <div class="form-group mt-2">
             <label for="username">Username</label>
             <div class="input-group">
-                <input type="text" name="username" id="username" class="form-control mt-2" placeholder="Masukkan Username Anda" value="<?php echo $biodata["username"]; ?>">
+                <input type="text" name="username" id="username" required="required" class="form-control mt-2" placeholder="Masukkan Username Anda" value="<?php echo $biodata["username"]; ?>">
             </div>
             </div>
 
             <div class="form-group mt-2">
             <label for="password">Password</label>
             <div class="input-group">
-                <input type="password" name="password" id="password" class="form-control mt-2" placeholder="Masukkan Password Anda" value="<?php echo $biodata["passwordUser"]; ?>">
+                <input type="password" name="password" required="required" id="password" class="form-control mt-2" placeholder="Masukkan Password Anda" value="<?php echo $biodata["passwordUser"]; ?>">
             </div>
             </div>
 
             <div class="form-group mt-2">
             <label for="password2">Konfirmasi Password</label>
             <div class="input-group">
-                <input type="password" name="password2" id="password2" class="form-control mt-2" placeholder="Konfirmasi Password Anda" value="<?php echo $biodata["passwordUser"]; ?>">
+                <input type="password" name="password2" id="password2" required="required" class="form-control mt-2" placeholder="Konfirmasi Password Anda" value="<?php echo $biodata["passwordUser"]; ?>">
             </div>
             </div>
 

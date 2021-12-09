@@ -105,18 +105,20 @@ $pengguna = query("SELECT * FROM users ORDER BY idUser ASC");
             </div>
             <!--sidebar end-->
         </div>
-    <div class="box-1 text-center">
+    <div class="box-1 text-center" style=" min-width:83%;">
         <h2 style="font-size: 30px; color: #262626;" class="text-center">Daftar Pengguna</h2>
           <div class="card-body">
         
-          <table id="example" class="display" cellspacing="0" width="100%" border="0" >
+          <table id="example" class="display1" cellspacing="0" width="100%" style="margin-left: -40px;" border="0" >
             <thead>
             <tr>
                 <th>No</th>
                 <th>NIP</th>
-                <th>Nama</th>
                 <th>Foto</th>
+                <th>Nama</th>
                 <th>NIK</th>
+                <th>Username</th>
+                <th>Password</th>
                 <th>Alamat</th>
                 <th>Telepon</th>
                 <th>Jumlah Setoran</th>
@@ -134,6 +136,8 @@ $pengguna = query("SELECT * FROM users ORDER BY idUser ASC");
                 <td><img src="img/user/<?= $row["gambar"]  ?>" width="90" height="100"></td>
                 <td><?php echo $row['namaUser'] ?></td>
                 <td><?php echo $row['nik'] ?></td>
+                <td><?php echo $row['username'] ?></td>
+                <td><?php echo $row['passwordUser'] ?></td>
                 <td><?php echo $row['alamat'] ?></td>
                 <td><?php echo $row['telepon'] ?></td>
                 <td><?php echo number_format($row['jmlSetoran']) ?></td>

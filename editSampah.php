@@ -135,6 +135,7 @@ if (isset($_POST["submit"]) ){
             <div class="card">
             <div class="card-body">
             <form action="" method="post" class="mt-3" enctype="multipart/form-data">
+            <input type="hidden" name="namalama" value="<?php echo $sampah["namaSampah"]; ?>">
             <div class="form-group mt-2">
                 <label for="jenisSampah" >Jenis Sampah :</label>
                 <select name="jenisSampah" id="jenisSampah" required="required" class="btn btn-info dropdown-toggle"  style="width: 100%;" value="<?php echo $sampah["jenisSampah"]; ?>">
@@ -148,8 +149,8 @@ if (isset($_POST["submit"]) ){
                 required="required" autofocus placeholder="Nama Sampah" autocomplete="off" class="form-order" style="width: 100%;" value="<?php echo $sampah["namaSampah"]; ?>"><br>
             </div>
             <div class="form-group mt-2">
-                <label for="satuan">Satuan :</label>
-                <input type="text" name="harga" id="harga"
+                <label for="satuan">Harga Satuan :</label>
+                <input type="number" name="harga" id="harga"
                 required="required" autofocus placeholder="Rp. " class="form-order" style="width: 92%;" value="<?php echo $sampah["harga"]; ?>">
                 <select name="satuan" id="satuan" required="required" class="btn btn-info dropdown-toggle" value="<?php echo $sampah["satuan"]; ?>">
                     <option class="dropdown-item">KG</option>

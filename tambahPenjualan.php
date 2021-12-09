@@ -155,7 +155,7 @@ if (isset($_POST["submit"]) ){
             </div>
             <div class="form-group mt-2">
                 <label for="berat">Berat yang Dijual (Kg) :</label>
-                <input type="text" name="berat" id="berat" required="required" class="form-order" style="width: 100%;">
+                <input type="number" name="berat" id="berat" required="required" class="form-order" style="width: 100%;">
             </div>
             <div class="form-group mt-2">
                 <label for="tanggal">Tanggal Penjualan :</label>
@@ -167,11 +167,11 @@ if (isset($_POST["submit"]) ){
             </div>
             <div class="form-group mt-2">
                 <label for="nomor">Nomor Pembeli :</label>
-                <input type="text" name="nomor" id="nomor" required="required" class="form-order" style="width: 100%;">
+                <input type="number" name="nomor" id="nomor" required="required" class="form-order" style="width: 100%;">
             </div>
             <div class="form-group mt-2">
                 <label for="harga">Harga Penjualan/Kg :</label>
-                <input type="text" name="harga" id="harga" required="required" class="form-order" style="width: 100%;">
+                <input type="number" name="harga" id="harga" required="required" class="form-order" style="width: 100%;">
             </div>
                 <button type="submit" name="submit" class="btn btn-primary btn-lg" style="width: 100%;">SUBMIT</button>
                

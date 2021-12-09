@@ -120,6 +120,7 @@ require 'functions.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://unicons.iconscout.com/release/v3.0.6/css/line.css'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/manual/stylelogin.css">
@@ -168,7 +169,12 @@ require 'functions.php';
             <input type="checkbox" name="remember" id="remember">
 						<label for="remember">Remember me</label>
             </div>
-            <button type="submit" name="login" class="btn-login mt-3 me-2" style="width: 100%;">LOGIN</button>
+            <div class="form-group mt-2">
+              <a href="index.php">
+                <button type="button" class="btn-login mt-3 me-2" style="width: 10%; float:left;"><i class="fas fa-arrow-left"></i></button>
+              </a>
+              <button type="submit" name="login" class="btn-login mt-3 me-2" style="width: 80%; float:right;">LOGIN</button>
+            </div>
             <small id="" class="form-text text-muted">Belum punya akun? silakan <a href="registrasi.php">Registrasi</a> disini! </small>
         </form>
     </div>

@@ -62,7 +62,7 @@ require 'functions.php';
                 <i class="fas fa-file-signature mt-2"></i>
               </div>
             </div>
-            <input type="text" name="nama" id="nama" class="form-control mt-2" placeholder="Masukkan Nama Lengkap Anda">
+            <input type="text" name="nama" id="nama" required="required" class="form-control mt-2" placeholder="Masukkan Nama Lengkap Anda">
           </div>
         </div>
 
@@ -71,7 +71,7 @@ require 'functions.php';
           <div class="input-group">
             <div class="input-group-prepend mt-2">
             </div>
-            <input type="file" name="gambar" id="gambar" class="form-control mt-2">
+            <input type="file" name="gambar" required="required" id="gambar" class="form-control mt-2">
           </div>
         </div>
 
@@ -83,7 +83,7 @@ require 'functions.php';
                 <i class="fas fa-address-card mt-2"></i>
               </div>
             </div>
-            <input type="text" name="nik" id="nik" class="form-control mt-2" placeholder="Masukkan Nomor Induk Kewarganegaraan">
+            <input type="number" name="nik" id="nik" required="required" class="form-control mt-2" placeholder="Masukkan Nomor Induk Kewarganegaraan">
           </div>
         </div>
 
@@ -95,7 +95,7 @@ require 'functions.php';
                 <i class="fas fa-map-marker-alt mt-2"></i>
               </div>
             </div>
-            <input type="text" name="alamat" id="alamat" class="form-control mt-2" placeholder="Masukkan Alamat Anda (lengkap dengan RT/RW)"> 
+            <input type="text" name="alamat" id="alamat" required="required" class="form-control mt-2" placeholder="Masukkan Alamat Anda (lengkap dengan RT/RW)"> 
           </div>
         </div>
 
@@ -107,7 +107,7 @@ require 'functions.php';
                 <i class="fas fa-tty mt-2"></i>
               </div>
             </div>
-            <input type="text" name="telepon" id="telepon" class="form-control mt-2" placeholder="Masukkan Nomor Telepon Anda">
+            <input type="number" name="telepon" id="telepon" required="required" class="form-control mt-2" placeholder="Masukkan Nomor Telepon Anda">
           </div>
         </div>
 
@@ -119,7 +119,7 @@ require 'functions.php';
                 <i class="fas fa-user mt-2"></i>
               </div>
             </div>
-            <input type="text" name="username" id="username" class="form-control mt-2" placeholder="Masukkan Username Anda">
+            <input type="text" name="username" id="username" required="required" class="form-control mt-2" placeholder="Masukkan Username Anda">
           </div>
         </div>
 
@@ -131,7 +131,7 @@ require 'functions.php';
                 <i class="fas fa-lock mt-2"></i>
               </div>
             </div>
-            <input type="password" name="password" id="password" class="form-control mt-2" placeholder="Masukkan Password Anda">
+            <input type="password" name="password" id="password" required="required" class="form-control mt-2" placeholder="Masukkan Password Anda">
           </div>
         </div>
 
@@ -143,7 +143,7 @@ require 'functions.php';
                 <i class="fas fa-unlock-alt mt-2"></i>
               </div>
             </div>
-            <input type="password" name="password2" id="password2" class="form-control mt-2" placeholder="Konfirmasi Password Anda">
+            <input type="password" name="password2" id="password2" required="required" class="form-control mt-2" placeholder="Konfirmasi Password Anda">
           </div>
         </div>
 
@@ -162,8 +162,12 @@ require 'functions.php';
             <input type="hidden" name="saldo" id="saldo" class="form-control mt-2" placeholder="Konfirmasi Password Anda">
           </div>
         </div>
-
-        <button type="submit" name="register" class="btn-regist btn-primary mt-3 me-2 ms-1" style="width: 100%;">SUBMIT</button>
+        <div class="form-group mt-2">
+          <a href="login.php">
+            <button type="button" class="btn-login mt-3 me-2" style="width: 10%;"><i class="fas fa-arrow-left"></i></button>
+          </a>
+          <button type="submit" name="register" class="btn-regist btn-primary mt-3 me-2 ms-1" style="width: 80%;float:right;">SUBMIT</button>
+        </div>
       </form>
     </div>
 

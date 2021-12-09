@@ -131,7 +131,7 @@ if (isset($_POST["submit"]) ){
                 <div class="form-group mt-2">
                 <label for="nama">Nama Lengkap</label>
                 <div class="input-group">
-                    <input type="text" name="nama" id="nama" class="form-control mt-2" placeholder="" value="<?php echo $pengguna["namaUser"]; ?>">
+                    <input type="text" name="nama" id="nama"  required="required" class="form-control mt-2" placeholder="" value="<?php echo $pengguna["namaUser"]; ?>">
                 </div>
                 </div>
 
@@ -145,35 +145,35 @@ if (isset($_POST["submit"]) ){
                 <div class="form-group mt-2">
                 <label for="nik">NIK</label>
                 <div class="input-group">
-                    <input type="text" name="nik" id="nik" class="form-control mt-2" placeholder="" value="<?php echo $pengguna["nik"]; ?>">
+                    <input type="number" name="nik" id="nik"  required="required" class="form-control mt-2" placeholder="" value="<?php echo $pengguna["nik"]; ?>">
                 </div>
                 </div>
 
                 <div class="form-group mt-2">
                 <label for="alamat">Alamat</label>
                 <div class="input-group">
-                    <input type="text" name="alamat" id="alamat" class="form-control mt-2" placeholder="" value="<?php echo $pengguna["alamat"]; ?>">
+                    <input type="text" name="alamat" id="alamat"  required="required" class="form-control mt-2" placeholder="" value="<?php echo $pengguna["alamat"]; ?>">
                 </div>
                 </div>
 
                 <div class="form-group mt-2">
                 <label for="password2">Telepon</label>
                 <div class="input-group">
-                    <input type="text" name="telepon" id="telepon" class="form-control mt-2" placeholder="" value="<?php echo $pengguna["telepon"]; ?>">
+                    <input type="number" name="telepon" id="telepon"  required="required" class="form-control mt-2" placeholder="" value="<?php echo $pengguna["telepon"]; ?>">
                 </div>
                 </div>
 
                 <div class="form-group mt-2">
                 <label for="password2">Jumlah Setoran</label>
                 <div class="input-group">
-                    <input type="text" name="setoran" id="setoran" class="form-control mt-2" placeholder="" value="<?php echo $pengguna["jmlSetoran"]; ?>">
+                    <input type="number" name="setoran" id="setoran"  required="required" class="form-control mt-2" placeholder="" value="<?php echo $pengguna["jmlSetoran"]; ?>">
                 </div>
                 </div>
 
                 <div class="form-group mt-2">
                 <label for="password2">Saldo</label>
                 <div class="input-group">
-                    <input type="text" name="saldo" id="saldo" class="form-control mt-2" placeholder="" value="<?php echo $pengguna["saldo"]; ?>">
+                    <input type="number" name="saldo" id="saldo"  required="required" class="form-control mt-2" placeholder="" value="<?php echo $pengguna["saldo"]; ?>">
                 </div>
                 </div>
 

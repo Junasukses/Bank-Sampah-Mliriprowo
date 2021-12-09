@@ -130,28 +130,28 @@ if (isset($_POST["submit"]) ){
                 <div class="form-group mt-2">
                 <label for="nama">Nama Lengkap</label>
                 <div class="input-group">
-                    <input type="text" name="nama" id="nama" class="form-control mt-2" placeholder="Masukkan Nama Lengkap Anda" value="<?php echo $biodata["namaAdmin"]; ?>">
+                    <input type="text" name="nama" id="nama" required="required" class="form-control mt-2" placeholder="Masukkan Nama Lengkap Anda" value="<?php echo $biodata["namaAdmin"]; ?>">
                 </div>
                 </div>
 
                 <div class="form-group mt-2">
                 <label for="nik">Username Admin</label>
                 <div class="input-group">
-                    <input type="text" name="username" id="username" class="form-control mt-2" placeholder="Masukkan Username Anda" value="<?php echo $biodata["usernameAdmin"]; ?>">
+                    <input type="text" name="username" id="username" required="required" class="form-control mt-2" placeholder="Masukkan Username Anda" value="<?php echo $biodata["usernameAdmin"]; ?>">
                 </div>
                 </div>
 
                 <div class="form-group mt-2">
                 <label for="alamat">Password</label>
                 <div class="input-group">
-                    <input type="password" name="password" id="password" class="form-control mt-2" placeholder="Masukkan Password Anda" value="<?php echo $biodata["passwordAdmin"]; ?>">
+                    <input type="password" name="password" id="password" required="required" class="form-control mt-2" placeholder="Masukkan Password Anda" value="<?php echo $biodata["passwordAdmin"]; ?>">
                 </div>
                 </div>
 
                 <div class="form-group mt-2">
                 <label for="password2">Konfirmasi Password</label>
                 <div class="input-group">
-                    <input type="password" name="password2" id="password2" class="form-control mt-2" placeholder="Konfirmasi Password Anda" value="<?php echo $biodata["passwordAdmin"]; ?>">
+                    <input type="password" name="password2" id="password2" required="required" class="form-control mt-2" placeholder="Konfirmasi Password Anda" value="<?php echo $biodata["passwordAdmin"]; ?>">
                 </div>
                 </div>
 

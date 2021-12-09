@@ -79,6 +79,27 @@ Preloader Area CSS Code
   background-color: #398B93;
   text-align: center;
 }
+
+.display1{
+  border-collapse: collapse;
+  overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+/*  border: 1px black solid;*/
+  color: white;
+}
+.display1 td{
+  color: black;
+  font-size: 9px;
+}
+.display1 .shadow-tr{
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+}
+.display1 th{
+  background-color: #398B93;
+  text-align: center;
+}
 /*pembeda */
 .works-section{
   padding:3em 0;

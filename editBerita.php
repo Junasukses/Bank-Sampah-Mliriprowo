@@ -134,6 +134,7 @@ if (isset($_POST["submit"]) ){
             <div class="card">
             <div class="card-body">
             <form action="" method="post" class="mt-3" enctype="multipart/form-data">
+            <input type="hidden" name="gambarlama" value="<?= $berita["gambar"]; ?>">
             <div class="form-group mt-2">
                 <label for="judul">Judul Berita:</label>
                 <input type="text" name="judul" id="judul"

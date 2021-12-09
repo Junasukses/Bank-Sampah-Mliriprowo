@@ -113,7 +113,7 @@ function tambahpenarikan($data){
 
 	$totalDataBank = mysqli_query($conn, "SELECT * FROM saldo_bank ORDER BY idTransaksi DESC LIMIT 1");
 	$ambilSaldo = mysqli_fetch_array($totalDataBank);
-	$totalSaldo = $ambilSaldo['totalSaldo'];
+	$totalSaldo = isset($ambilSaldo['totalSaldo']);
 
 	$no = mysqli_query($conn, "SELECT * FROM penarikan ORDER BY idTarik DESC");
 	$penarikk = (stripslashes($data["penarik"]));
@@ -122,7 +122,11 @@ function tambahpenarikan($data){
 		return 0;
 	}else{
 		$noArr = mysqli_fetch_array($no);
-		$row = $noArr[0];
+		if ($noArr == null){
+			$row = 000;
+		} else {
+			$row = $noArr[0];
+		}
 		$takeId = substr($row, -3);
 		$lastId = (int)$takeId;
 		$newId = $lastId + 1;
@@ -141,7 +145,9 @@ function tambahpenarikan($data){
 		return 0;
 	} elseif($saldoPenarikan > $saldoUser) {
 		return 0;
-	} else {
+	} elseif($saldoPenarikan < 1 ){
+		return 0;
+	}else {
 		$query = "INSERT INTO penarikan
 		   VALUES
 	   ('$format', '$idUser', '$namaUser', '$tanggal', '$saldoPenarikan')
@@ -183,7 +189,11 @@ function tambahpenjualan($data){
 
 	$no = mysqli_query($conn, "SELECT * FROM penjualan ORDER BY idJual DESC");
 	$noArr = mysqli_fetch_array($no);
-	$row = $noArr[0];
+	if ($noArr == null){
+		$row = 000;
+	} else {
+		$row = $noArr[0];
+	}
 	$takeId = substr($row, -3);
 	$lastId = (int)$takeId;
 	$newId = $lastId + 1;
@@ -221,7 +231,12 @@ function tambahpenjualan($data){
 	$stock = $arrayberat[2];
 	if ($beratpenjualan > $stock) {
 		return 0;
-	}else {
+	}elseif($beratpenjualan < 1){
+		return 0;
+	}elseif($harga < 1){
+		return 0;
+	}
+	else {
 		$query = "INSERT INTO penjualan
 				VALUES
 			('$format', '$idSampah', '$berat', '$tanggal', '$namaPembeli', '$nomorPembeli', '$harga', '$totalPendapatan')
@@ -236,7 +251,11 @@ function tambahsaldo($data){
 
 	$no = mysqli_query($conn, "SELECT * FROM saldo_bank ORDER BY idTransaksi DESC");
 	$noArr = mysqli_fetch_array($no);
-	$row = $noArr[0];
+	if ($noArr == null){
+		$row = 000;
+	} else {
+		$row = $noArr[0];
+	}
 	$takeId = substr($row, -3);
 	$lastId = (int)$takeId;
 	$newId = $lastId + 1;
@@ -362,7 +381,11 @@ function tambahsetoran($data){
 
 	$no = mysqli_query($conn, "SELECT * FROM setoran ORDER BY idSetor DESC");
 	$noArr = mysqli_fetch_array($no);
-	$row = $noArr[0];
+	if ($noArr == null){
+		$row = 000;
+	} else {
+		$row = $noArr[0];
+	}
 	$takeId = substr($row, -3);
 	$lastId = (int)$takeId;
 	$newId = $lastId + 1;
@@ -392,12 +415,16 @@ function tambahsetoran($data){
 	$harga = $id3['harga'];
 	$total = $berat * $harga;
 	
+	if($berat < 1){
+		return 0;
+	}else{
+		$query = "INSERT INTO setoran
+		VALUES
+			('$format', '$idUser', '$idSampah', '$tanggal', '$berat', '$total')
+			";
+		mysqli_query($conn, $query);
+	}
 
-$query = "INSERT INTO setoran
-		   VALUES
-	   ('$format', '$idUser', '$idSampah', '$tanggal', '$berat', '$total')
-	   ";
-mysqli_query($conn, $query);
 
 return mysqli_affected_rows($conn);
 }
@@ -426,7 +453,11 @@ function tambahstock($data){
 
 	$no = mysqli_query($conn, "SELECT * FROM stock_sampah ORDER BY idStock DESC");
 	$noArr = mysqli_fetch_array($no);
-	$row = $noArr[0];
+	if ($noArr == null){
+		$row = 000;
+	} else {
+		$row = $noArr[0];
+	}
 	$takeId = substr($row, -3);
 	$lastId = (int)$takeId;
 	$newId = $lastId + 1;
@@ -492,7 +523,11 @@ function tambahsampah($data){
 
 	$no = mysqli_query($conn, "SELECT * FROM sampah ORDER BY idSampah DESC");
 	$noArr = mysqli_fetch_array($no);
-	$row = $noArr[0];
+	if ($noArr == null){
+		$row = 000;
+	} else {
+		$row = $noArr[0];
+	}
 	$takeId = substr($row, -3);
 	$lastId = (int)$takeId;
 	$newId = $lastId + 1;
@@ -515,13 +550,23 @@ function tambahsampah($data){
 		return false;
 	}
 	$keterangan = (stripslashes($data["keterangan"]));
+	$result = mysqli_query($conn, "SELECT namaSampah FROM sampah WHERE namaSampah = '$nama'");
 
-$query = "INSERT INTO sampah
-		   VALUES
-	   ('$format', '$jenisSampah', '$nama', '$satuan', '$harga', '$gambar', '$keterangan')
-	   ";
-mysqli_query($conn, $query);
-
+	if ( mysqli_fetch_assoc($result) ){
+		echo "<script>
+				alert('Sampah Sudah Ada!');
+				</script>";
+		return false;
+	}
+	if($harga < 1){
+		return 0;
+	}else{
+		$query = "INSERT INTO sampah
+				VALUES
+			('$format', '$jenisSampah', '$nama', '$satuan', '$harga', '$gambar', '$keterangan')
+			";
+		mysqli_query($conn, $query);
+	}
 return mysqli_affected_rows($conn);
 }
 
@@ -573,7 +618,11 @@ function tambahberita($data){
 
 	$no = mysqli_query($conn, "SELECT * FROM berita ORDER BY idBerita DESC");
 	$noArr = mysqli_fetch_array($no);
-	$row = $noArr[0];
+	if ($noArr == null){
+		$row = 000;
+	} else {
+		$row = $noArr[0];
+	}
 	$takeId = substr($row, -3);
 	$lastId = (int)$takeId;
 	$newId = $lastId + 1;
@@ -802,24 +851,51 @@ function editSampah($data) {
 	$idSampah = $_GET["idSampah"];
  	$jenisSampah = htmlspecialchars( $data["jenisSampah"]);
 	$namaSampah = htmlspecialchars($data["namaSampah"]);
+	$namaSampahOld = htmlspecialchars($data["namalama"]);
 	$satuan = htmlspecialchars( $data["satuan"]);
 	$harga = htmlspecialchars($data["harga"]);
 	$gambar = upload();
 	if (!$gambar){
 		return false;
 	}
-	$keterangan = htmlspecialchars($data["keterangan"]);
+	
+	if ($namaSampah != $namaSampahOld){
+		$result = mysqli_query($conn, "SELECT namaSampah FROM sampah WHERE namaSampah = '$namaSampah'");
 
-	$query ="UPDATE sampah SET 
-				jenisSampah = '$jenisSampah',
-				namasampah = '$namaSampah',
-				satuan = '$satuan',
-				harga = '$harga',
-				gambar = '$gambar',
-				deskripsi = '$keterangan'
-			WHERE idSampah = '$idSampah'
-		";
-	mysqli_query($conn, $query);
+		if ( mysqli_fetch_assoc($result) ){
+			echo "<script>
+					alert('Sampah Sudah Ada!');
+					</script>";
+			return false;
+		}
+		$keterangan = htmlspecialchars($data["keterangan"]);
+
+		$query ="UPDATE sampah SET 
+					jenisSampah = '$jenisSampah',
+					namasampah = '$namaSampah',
+					satuan = '$satuan',
+					harga = '$harga',
+					gambar = '$gambar',
+					deskripsi = '$keterangan'
+				WHERE idSampah = '$idSampah'
+			";
+		mysqli_query($conn, $query);
+	}else{
+		$keterangan = htmlspecialchars($data["keterangan"]);
+
+		$query ="UPDATE sampah SET 
+					jenisSampah = '$jenisSampah',
+					namasampah = '$namaSampah',
+					satuan = '$satuan',
+					harga = '$harga',
+					gambar = '$gambar',
+					deskripsi = '$keterangan'
+				WHERE idSampah = '$idSampah'
+			";
+		mysqli_query($conn, $query);
+	}
+	
+	
 
 return mysqli_affected_rows($conn);
 
@@ -1152,7 +1228,7 @@ function editPenjualanSaldo($data) {
 	$tanggal = (stripslashes($data["tanggal"]));
 	$ambildatabank = mysqli_query($conn, "SELECT * FROM saldo_bank WHERE jumlah = '$totalPendapatanPenjualan' AND tanggal = '$tanggal'");
 	$id3 = mysqli_fetch_array($ambildatabank);
-	$saldoBank = $id3['totalSaldo'];
+	$saldoBank = isset($id3['totalSaldo']);
 	$berat = (stripslashes($data["berat"]));
     $harga = (stripslashes($data["harga"]));
     $totalPendapatan = $berat * $harga;
@@ -1205,7 +1281,7 @@ function hapussampah($id){
 
 	$namasampah = mysqli_query($conn, "SELECT * FROM sampah WHERE idSampah = '$id'");
 	$array = mysqli_fetch_array($namasampah);
-	$row = $array[2];
+	$row = isset($array[2]);
 	if($penjualan == false & $setoran == true){
 		mysqli_query($conn, "DELETE FROM setoran WHERE idSampah = '$id'");
 		mysqli_query($conn, "DELETE FROM sampah WHERE idSampah = '$id'");

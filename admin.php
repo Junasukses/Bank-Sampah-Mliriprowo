@@ -15,7 +15,14 @@ $biodata = query("SELECT * FROM admins WHERE IdAdmin = '$id'")[0];
 $no = mysqli_query($conn, "SELECT * FROM saldo_bank");
 $jumlahData = mysqli_num_rows($no);
 $hitung = $jumlahData - 1;
-$saldo = query("SELECT * FROM saldo_bank")[$hitung];
+
+if($hitung < 1){
+  $saldoAkhir = 0;
+} else {
+  $saldo = query("SELECT * FROM saldo_bank")[$hitung];
+  $saldoAkhir = isset($saldo['totalSaldo']);
+}
+
 
 $stock = query("SELECT stock FROM stock_sampah");
 
@@ -154,7 +161,7 @@ foreach ($stock as $row){
         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="box bg-warning p-3">
             <i class="uil-eye"></i>
-            <h3><?php echo "Rp. ".number_format(($saldo['totalSaldo']), 2, ",", ".") ?></h3>
+            <h3><?php echo "Rp. ".number_format(($saldoAkhir), 2, ",", ".") ?></h3>
             <p class="lead">Jumlah Saldo Bank</p>
           </div>
         </div>

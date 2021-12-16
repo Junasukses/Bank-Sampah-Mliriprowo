@@ -126,12 +126,14 @@
                <div class="col-md-12">
                   <h3 class="title-un">4 TAHAP BANK SAMPAH MILIPRONO</h3>
                   <div class="title-un-icon"><i class="fab fa-accusoft"></i></div>
-                  <p class="title-un-des" style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <div class="title-un-des" style="text-align: justify;">4 Tahap Bank Sampah Mliri Prono :
+                  <ol>
+                    <li>Pendaftaran : Masyarakat yang ingin menyetorkan sampah harus mendaftar terlebih dahulu</li>
+                    <li>Pemilahan : Sampah harus dipilah berdasar jenis-jenisnya</li>
+                    <li>Penimbangan : Sampah ditimbang untuk mengetahui berat sampah yang akan disetorkan</li>
+                    <li>Mendapat Keuntungan : Masyarakat dapat memperoleh sejumlah uang jika sampah berhasil dijual</li>
+                  </ol>
+                  </div>
       <div id="foo">
       <section class="team">
           <div class="row mgt50px">
